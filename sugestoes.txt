@@ -1,0 +1,17 @@
+Danilson Bezerra||Sugestão para inclusão do título do ticket coerente com o que foi solicitado. Sugestão para inclusão de um resumo simples sobre a demanda analisada. Facilitará a liberação da versão.
+Flaubert||Sugestão: incluir hints (ajuda) para auxiliar o suporte. As informações seriam incluídas em relatórios e menus. Os hints seriam colocados em PDF e disponibilizados via links. Revisar códigos de algumas telas, como integração safra, incluindo dados como leiaute de arquivo, significado do código, entre outros.
+Andresa|307866|Sugestão para bloquear a exportação para o PDV de produtos do tipo fabricação própria que não possuem composição, e informá-los em um relatório gerado ao final do processo de exportação de dados.
+Sem Responsável||Sugestão vinda do ticket 278.637: ajustar na tela de integração Mastersaf o nome dos arquivos gerados. Hoje o sistema gera alguns arquivos com nomes que não há como identificar sem um leiaute em mãos, por exemplo, arquivos SAFX121, SAFX122 ou SAFX2062 — este último referente a dados do SPED.
+Danilson Bezerra||Retorno da utilização da mensagem pública nos tickets. Ação pública utilizar para Rede 7 e Rede Phoenix; Tag MSG Pública Chat utilizar para as demais empresas. Observação: não inserir comentários técnicos e atentar a erros de português e às datas nas informações de conclusão de ticket. Dar preferência em não informar a conclusão do ticket, e sim o prazo para finalizar o estudo da demanda.
+Flaubert||Criar no sistema uma opção que, ao logar pela primeira vez, o sistema verifique os arquivos e pergunte se deseja copiar para outra EMP, fazendo a cópia automática.
+Felipe Vieira||Criar um instalador do sistema que faça a cópia dos arquivos.
+Rafael Jr||Criar uma BAT que faça uma cópia dos arquivos de uma EMP para outra, agilizando o cadastro de uma empresa.
+Flaubert||Ajustar a reunião semanal levando em consideração os tickets a serem verificados e os SLAs.
+Sem Responsável||Retorno do checkpoint às quartas-feiras.
+Sem Responsável||Fernando solicitou realizar levantamento dos assuntos que podem gerar impactos para a empresa, dentro dos tickets do setor, durante a semana, para repasse aos gestores.
+Sem Responsável||Atendimento conjunto de uma demanda mais antiga na linha dos atendentes N3. A análise ocorrerá diariamente, utilizando no máximo 1h por dia.
+Sem Responsável||Reforçar as verificações dos tickets antigos no início do expediente (08:30).
+Wesley Phillipe||Incluir na ata de reunião os bugs recentes da semana e corrupções nos servidores em nuvem.
+Flaubert||Que aconteça esse tipo de reunião também no N2.
+Sem Responsável||Será implementado a partir de 01/10/2026 o atendimento rotativo N3, onde um dos desenvolvedores ficará disponível para analisar tickets rápidos.
+Wesley Phillipe||Envio de um documento, toda sexta-feira, ao e-mail da área N2, contendo os tickets solucionados classificados como "Orientação", para que sejam inseridos na base de conhecimento.

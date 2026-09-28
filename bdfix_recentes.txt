@@ -1,0 +1,18 @@
+531698|Análise de Lançamento Bancário sem Origem Vinculada do contas a receber - NODE13.|NUVEM
+532335|Inconsistência na consulta do Fechamento de Caixa – Códigos BD não encontrados - NODE 14|NUVEM
+523101|Placas cadastradas em clientes não localizadas após processo de alteração de LOCAL para REDE os cadastros de cliente *NODE 13|NUVEM
+535031|NF-e 95102 não apresentada na tela de Emissão de nota NODE16|NUVEM
+535910|BDFIX para alterar o código do produto ARLA 32 GRANEL, de 7896019602105 para 7899767325166. - NODE 20|NUVEM
+535783|Indisponibilidade do perfil Gerencial+PDV no cadastro de usuários - Região 01  CÓD. 3502 - MENDONCA LUB LTDA-REDISPONIBILIZAR PERFIS DE ACESSO PADRAO-REDE MEDONÇA-NODE13|NUVEM
+535027|Análise e Recuperação de Placas Removidas dos Cadastros de Clientes por EMP*NODE 13|NUVEM
+535210|Indisponibilidade do perfil Gerencial+PDV no cadastro de usuários NODE20|NUVEM
+534997|Duplicidade de inventário na ficha de estoque do produto IPI F1 MAS SINT 5W30 SN/RC, código 07896587320838 - NODE13|NUVEM
+536476|ALTERAR CADASTRO LOCAL PARA REDE|NUVEM
+517081|O filtro do fornecedor "COMPANHIA DE GÁS DE MINAS GERAIS GASMIG" na aba Contas a Pagar e nas entradas de notas está apresentando um histórico de transações incompleto.- NODE 16|NUVEM
+539010|Faturas unificadas ficando em branco, deixando as faturas relacionadas disponíveis para um novo faturamento|NUVEM
+538442|Faturamento 4056-04 do cliente "Transportadora oliveira" sem vinculo do pagamento registrado no fechamento de caixas|NUVEM
+539498|Ticket aberto para executar criação do BDFIx para executar na rede brasil petro|NUVEM
+539704|Criação de BDFIX para excluir fatura unificada sem informação - NODE18|NUVEM
+539705|Criação de BDFIX para excluir fatura unificada sem informação - NODE18|NUVEM
+539772|BDFIX Criação de BDFIX para excluir fatura unificada sem informação - NODE18|NUVEM
+538840|BDFIX Ao estornar lançamentos no contas a pagar, apresenta erro 4 ao estornar pagamento do título BD 91153, node 17|NUVEM
