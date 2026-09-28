@@ -1,0 +1,3751 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ata da Reunião de Alinhamento Semanal — Desenvolvimento N3</title>
+<meta name="description" content="Ata interativa da reunião de alinhamento semanal do Desenvolvimento N3: tickets prioritários, meta semanal x realizado, avisos, BDFix e bugs recentes, com exportação em PDF e TXT.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzFkMzM0OSIvPgogIDxyZWN0IHg9IjkiIHk9IjYiIHdpZHRoPSIxNCIgaGVpZ2h0PSIyMCIgcng9IjIiIGZpbGw9IiNmZmZmZmYiLz4KICA8cmVjdCB4PSIxMiIgeT0iNCIgd2lkdGg9IjgiIGhlaWdodD0iNCIgcng9IjEuNSIgZmlsbD0iI2MwNTMzZiIvPgogIDxsaW5lIHgxPSIxMS41IiB5MT0iMTIiIHgyPSIyMC41IiB5Mj0iMTIiIHN0cm9rZT0iIzJlNGQ2YiIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSIxMS41IiB5MT0iMTYiIHgyPSIyMC41IiB5Mj0iMTYiIHN0cm9rZT0iIzJlNGQ2YiIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxwYXRoIGQ9Ik0xMS41IDIwLjUgTDE0IDIzIEwyMC41IDE2LjUiIHN0cm9rZT0iIzFlOGU1YSIgc3Ryb2tlLXdpZHRoPSIxLjgiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4=">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ata da Reunião de Alinhamento Semanal — Desenvolvimento N3">
+<meta property="og:description" content="Documento interativo com tickets prioritários, metas, avisos, BDFix e bugs recentes da equipe N3, exportável em PDF e TXT.">
+<meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFkMzM0OSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyZTRkNmIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjYzMCIgZmlsbD0idXJsKCNiZykiLz4KICA8cmVjdCB4PSI3MCIgeT0iNzAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTcwIiByeD0iMTAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOTUiLz4KICA8cmVjdCB4PSI5NSIgeT0iNTUiIHdpZHRoPSI3MCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNjMDUzM2YiLz4KICA8bGluZSB4MT0iOTAiIHkxPSIxMjAiIHgyPSIxNzAiIHkyPSIxMjAiIHN0cm9rZT0iIzJlNGQ2YiIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iOTAiIHkxPSIxNDUiIHgyPSIxNzAiIHkyPSIxNDUiIHN0cm9rZT0iIzJlNGQ2YiIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iOTAiIHkxPSIxNzAiIHgyPSIxNTAiIHkyPSIxNzAiIHN0cm9rZT0iIzJlNGQ2YiIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNOTIgMjA1IEwxMTIgMjI1IEwxNjggMTc1IiBzdHJva2U9IiMxZThlNWEiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHRleHQgeD0iMjQwIiB5PSIxNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI2IiBsZXR0ZXItc3BhY2luZz0iNCIgZmlsbD0iI2MwNTMzZiIgZm9udC13ZWlnaHQ9IjcwMCI+QVRBIERFIFJFVU5JQU8gLiBERVNFTlZPTFZJTUVOVE8gTjM8L3RleHQ+CiAgPHRleHQgeD0iMjQwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjU4IiBmaWxsPSIjZmZmZmZmIiBmb250LXdlaWdodD0iODAwIj5BbGluaGFtZW50byBTZW1hbmFsPC90ZXh0PgogIDx0ZXh0IHg9IjI0MCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1OCIgZmlsbD0iI2ZmZmZmZiIgZm9udC13ZWlnaHQ9IjgwMCI+ZG8gRGVzZW52b2x2aW1lbnRvIE4zPC90ZXh0PgogIDx0ZXh0IHg9IjI0MCIgeT0iMzY1IiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2M5ZDZlMyI+VGlja2V0cyAuIE1ldGFzIC4gQXZpc29zIC4gQnVncyByZWNlbnRlcyAuIEV4cG9ydGF2ZWwgZW0gUERGPC90ZXh0PgogIDxyZWN0IHg9IjI0MCIgeT0iNDEwIiB3aWR0aD0iNzIwIiBoZWlnaHQ9IjIiIGZpbGw9IiMzZDViN2EiLz4KICA8dGV4dCB4PSIyNDAiIHk9IjQ2MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjIiIGZpbGw9IiM5ZmIzYzgiPkVxdWlwZSBOMyAuIFN1cG9ydGUgZSBEZXNlbnZvbHZpbWVudG88L3RleHQ+Cjwvc3ZnPg==">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ata da Reunião de Alinhamento Semanal — Desenvolvimento N3">
+<meta name="twitter:description" content="Documento interativo com tickets prioritários, metas, avisos, BDFix e bugs recentes da equipe N3.">
+<meta name="twitter:image" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFkMzM0OSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyZTRkNmIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjYzMCIgZmlsbD0idXJsKCNiZykiLz4KICA8cmVjdCB4PSI3MCIgeT0iNzAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTcwIiByeD0iMTAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOTUiLz4KICA8cmVjdCB4PSI5NSIgeT0iNTUiIHdpZHRoPSI3MCIgaGVpZ2h0PSIzMCIgcng9IjgiIGZpbGw9IiNjMDUzM2YiLz4KICA8bGluZSB4MT0iOTAiIHkxPSIxMjAiIHgyPSIxNzAiIHkyPSIxMjAiIHN0cm9rZT0iIzJlNGQ2YiIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iOTAiIHkxPSIxNDUiIHgyPSIxNzAiIHkyPSIxNDUiIHN0cm9rZT0iIzJlNGQ2YiIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iOTAiIHkxPSIxNzAiIHgyPSIxNTAiIHkyPSIxNzAiIHN0cm9rZT0iIzJlNGQ2YiIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNOTIgMjA1IEwxMTIgMjI1IEwxNjggMTc1IiBzdHJva2U9IiMxZThlNWEiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHRleHQgeD0iMjQwIiB5PSIxNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI2IiBsZXR0ZXItc3BhY2luZz0iNCIgZmlsbD0iI2MwNTMzZiIgZm9udC13ZWlnaHQ9IjcwMCI+QVRBIERFIFJFVU5JQU8gLiBERVNFTlZPTFZJTUVOVE8gTjM8L3RleHQ+CiAgPHRleHQgeD0iMjQwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjU4IiBmaWxsPSIjZmZmZmZmIiBmb250LXdlaWdodD0iODAwIj5BbGluaGFtZW50byBTZW1hbmFsPC90ZXh0PgogIDx0ZXh0IHg9IjI0MCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1OCIgZmlsbD0iI2ZmZmZmZiIgZm9udC13ZWlnaHQ9IjgwMCI+ZG8gRGVzZW52b2x2aW1lbnRvIE4zPC90ZXh0PgogIDx0ZXh0IHg9IjI0MCIgeT0iMzY1IiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2M5ZDZlMyI+VGlja2V0cyAuIE1ldGFzIC4gQXZpc29zIC4gQnVncyByZWNlbnRlcyAuIEV4cG9ydGF2ZWwgZW0gUERGPC90ZXh0PgogIDxyZWN0IHg9IjI0MCIgeT0iNDEwIiB3aWR0aD0iNzIwIiBoZWlnaHQ9IjIiIGZpbGw9IiMzZDViN2EiLz4KICA8dGV4dCB4PSIyNDAiIHk9IjQ2MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjIiIGZpbGw9IiM5ZmIzYzgiPkVxdWlwZSBOMyAuIFN1cG9ydGUgZSBEZXNlbnZvbHZpbWVudG88L3RleHQ+Cjwvc3ZnPg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #06070a;
+    --paper: #0e1116;
+    --surface: #141821;
+    --surface-2: #1c212b;
+    --ink: #eef1f5;
+    --ink-soft: rgba(238,241,245,0.64);
+    --line: rgba(255,255,255,0.14);
+    --table-border: rgba(255,255,255,0.26);
+    --brand: #3b82f6;
+    --brand-dark: #7db8f8;
+    --accent: #ff8a68;
+    --good: #34d399;
+    --good-bg: rgba(52,211,153,0.16);
+    --warn: #fbbf24;
+    --warn-bg: rgba(251,191,36,0.16);
+    --bad: #f87171;
+    --bad-bg: rgba(248,113,113,0.18);
+    --info: #60a5fa;
+    --info-bg: rgba(96,165,250,0.18);
+    --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    --sora: 'Sora', 'Segoe UI', Arial, sans-serif;
+  }
+
+  /* Light-theme values preserved here for the print stylesheet (see @media print below) */
+  @media print {
+    :root {
+      --bg: #f6f7f9;
+      --paper: #ffffff;
+      --surface: #eef2f6;
+      --surface-2: #e2e8ee;
+      --ink: #1b2430;
+      --ink-soft: #5a6472;
+      --line: #e2e6eb;
+      --table-border: #9aa5b1;
+      --brand: #2e4d6b;
+      --brand-dark: #1d3349;
+      --accent: #c0533f;
+      --good: #1e8e5a;
+      --good-bg: #e7f5ee;
+      --warn: #b8860b;
+      --warn-bg: #fbf3df;
+      --bad: #b3261e;
+      --bad-bg: #fbe9e7;
+      --info: #1d5fa8;
+      --info-bg: #e5f0fb;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sora), 'Segoe UI', Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  header.doc-header {
+    background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+    color: #fff;
+    padding: 40px clamp(20px, 5vw, 64px) 32px;
+  }
+  header.doc-header .eyebrow {
+    font-family: var(--mono);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: .8;
+    margin-bottom: 10px;
+  }
+  header.doc-header h1 {
+    margin: 0 0 14px;
+    font-size: clamp(24px, 3.2vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    font-size: 14px;
+  }
+  .meta-strip div span.label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    opacity: .75;
+    margin-bottom: 2px;
+  }
+  nav.toc {
+    max-width: 1080px;
+    margin: -20px auto 0;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    box-shadow: 0 8px 24px rgba(20,30,45,.08);
+    position: relative;
+    z-index: 2;
+  }
+  nav.toc a {
+    color: var(--brand-dark);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent); }
+
+  main {
+    max-width: 1080px;
+    margin: 32px auto 80px;
+    padding: 0 20px;
+  }
+  section.card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 26px clamp(18px, 3vw, 34px) 30px;
+    margin-bottom: 22px;
+    scroll-margin-top: 16px;
+  }
+  section.card h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 18px;
+    font-size: 19px;
+    color: var(--brand-dark);
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 10px;
+  }
+  section.card h2 .num {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    background: var(--bad-bg);
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    border: 1px solid var(--table-border);
+  }
+  th, td {
+    text-align: left;
+    padding: 9px 10px;
+    border: 1px solid var(--table-border);
+    vertical-align: top;
+  }
+  th {
+    background: var(--surface);
+    color: var(--brand-dark);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    font-weight: 700;
+    position: sticky;
+    top: 0;
+  }
+  tr:hover td { background: var(--surface-2); }
+  .table-scroll { overflow-x: auto; border: 1px solid var(--table-border); border-radius: 8px; }
+  .table-scroll table { min-width: 620px; border: none; }
+
+  .pill {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .pill-good { background: var(--good-bg); color: var(--good); }
+  .pill-warn { background: var(--warn-bg); color: var(--warn); }
+  .pill-bad  { background: var(--bad-bg); color: var(--bad); }
+  .pill-neutral { background: var(--surface-2); color: var(--ink-soft); }
+  .pill-info { background: var(--info-bg); color: var(--info); }
+
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .kpi .kpi-val { font-size: 22px; font-weight: 800; color: var(--brand-dark); }
+  .kpi .kpi-label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); margin-top: 2px; }
+
+  .chart-wrap { text-align: center; margin-top: 6px; }
+  .chart-svg-container {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--table-border);
+    background: var(--paper);
+    padding: 6px 0;
+    position: relative;
+    cursor: zoom-in;
+    touch-action: pan-y;
+  }
+  .chart-svg-container svg {
+    display: block;
+    margin: 0 auto;
+    width: 100% !important;
+    height: auto !important;
+    transition: transform 0.06s ease-out;
+    will-change: transform;
+  }
+  .chart-zoom-hint {
+    text-align: center;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  @media print { .chart-zoom-hint { display: none !important; } }
+  .chart-caption { font-size: 12.5px; color: var(--ink-soft); margin-top: 8px; }
+
+  .notice-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .notice-list li {
+    border-left: 3px solid var(--brand);
+    background: var(--surface);
+    padding: 8px 12px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .notice-list li .notice-text { flex: 1 1 auto; }
+  .notice-list li .notice-remove-btn { flex: 0 0 auto; }
+  @media print { .notice-remove-btn { display: none !important; } }
+  .empty { color: var(--ink-soft); font-style: italic; }
+
+  footer {
+    max-width: 1080px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    color: var(--ink-soft);
+    font-size: 12px;
+    text-align: center;
+  }
+
+  @media print {
+    nav.toc { display: none; }
+    #setup-screen { display: none !important; }
+    #edit-meeting-btn { display: none !important; }
+    .add-meta-row, #add-meta-warning { display: none !important; }
+    #pdf-actions { display: none !important; }
+    body { background: #fff; }
+    section.card { box-shadow: none; border: none; }
+    /* Each numbered topic starts on its own page; a topic may span
+       more than one page, but two topics never share a page. */
+    section.card + section.card { break-before: page; page-break-before: always; }
+    table { break-inside: auto; }
+    tr { break-inside: avoid; }
+    thead { display: table-header-group; }
+  }
+
+  /* ---- Setup screen ---- */
+  .report-hidden { display: none !important; }
+  #setup-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, var(--bg), #000000);
+  }
+  .setup-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    max-width: 640px;
+    width: 100%;
+    padding: clamp(20px, 4vw, 40px);
+    box-shadow: 0 20px 50px rgba(20,30,45,.10);
+  }
+  .setup-card .eyebrow {
+    font-family: var(--mono);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .setup-card h1 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    color: var(--brand-dark);
+  }
+  .setup-card .sub {
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    margin: 0 0 24px;
+  }
+  .setup-section { margin-bottom: 22px; }
+  .setup-section > label.group-label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin-bottom: 10px;
+  }
+  .member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 8px;
+  }
+  .member-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: var(--surface);
+  }
+  .member-row .member-name { font-size: 13.5px; font-weight: 600; }
+  .status-toggle {
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .status-toggle button {
+    border: none;
+    background: var(--surface);
+    color: var(--ink-soft);
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .status-toggle button.active-presente { background: var(--good-bg); color: var(--good); }
+  .status-toggle button.active-ausente { background: var(--bad-bg); color: var(--bad); }
+
+  .select-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .select-row .field label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin-bottom: 6px;
+  }
+  .select-row select {
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    font-size: 13.5px;
+    background: var(--surface);
+    color: var(--ink);
+  }
+  .setup-actions {
+    margin-top: 26px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .btn-primary {
+    background: var(--brand);
+    color: #fff;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--brand-dark); }
+  .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+  .setup-hint {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  #edit-meeting-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.35);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-top: 16px;
+  }
+  #edit-meeting-btn:hover { background: rgba(255,255,255,.22); }
+
+  /* ---- Add meta period form ---- */
+  .add-meta-row {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  .add-meta-row .field { display: flex; flex-direction: column; gap: 6px; }
+  .add-meta-row .field label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-weight: 700;
+    color: var(--brand-dark);
+  }
+  .add-meta-row input {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    font-size: 13.5px;
+    background: var(--surface);
+    color: var(--ink);
+  }
+  .add-meta-row input#new-periodo { width: 180px; }
+  .add-meta-row .field-narrow input { width: 90px; }
+  .add-meta-row .field-preview { align-items: flex-start; justify-content: center; min-height: 38px; }
+  .add-meta-row .field-preview .pill { font-size: 13px; padding: 6px 12px; }
+  .add-meta-row .btn-primary { padding: 9px 18px; font-size: 13.5px; }
+  #add-meta-warning { color: var(--bad); font-size: 12px; margin: 8px 0 0; min-height: 14px; }
+
+  /* ---- Remove-row button (Meta Semanal x Realizado) ---- */
+  th.col-actions, td.col-actions { text-align: center; width: 1%; white-space: nowrap; }
+  .remove-row-btn {
+    background: var(--bad-bg);
+    color: var(--bad);
+    border: 1px solid transparent;
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+  .remove-row-btn:hover { background: var(--bad); color: #fff; }
+  @media print { th.col-actions, td.col-actions { display: none !important; } }
+
+  /* ---- Meta x Realizado: highlight cell above/below target ---- */
+  td.realizado-cell.up { background: var(--info-bg); color: var(--info); font-weight: 700; }
+  td.realizado-cell.down { background: var(--bad-bg); color: var(--bad); font-weight: 700; }
+
+  /* ---- Ticket links (Section 2) ---- */
+  .ticket-link {
+    color: var(--brand-dark);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--brand);
+  }
+  .ticket-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ---- Sortable column headers (Section 2) ---- */
+  th.sortable-th { cursor: pointer; user-select: none; position: relative; padding-right: 20px; }
+  th.sortable-th:hover { background: var(--surface-2); }
+  th.sortable-th::after {
+    content: '↕';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    opacity: .45;
+  }
+  th.sortable-th.sort-asc::after { content: '▲'; opacity: .9; }
+  th.sortable-th.sort-desc::after { content: '▼'; opacity: .9; }
+
+  /* ---- Editable Responsável cell (Section 2) ---- */
+  td.resp-cell { cursor: pointer; position: relative; }
+  td.resp-cell:hover { background: var(--surface-2); }
+  td.resp-cell:hover::after {
+    content: '✎';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    color: var(--brand);
+    opacity: .7;
+  }
+  td.resp-cell select.resp-edit-select {
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--brand);
+    font-size: 13px;
+    background: var(--surface);
+    color: var(--ink);
+  }
+  @media print { td.resp-cell::after { display: none !important; } th.sortable-th::after { display: none !important; } }
+
+  /* ---- Add new ticket form (Section 2) ---- */
+  .add-ticket-row {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  .add-ticket-row .field { display: flex; flex-direction: column; gap: 6px; }
+  .add-ticket-row .field label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-weight: 700;
+    color: var(--brand-dark);
+  }
+  .add-ticket-row input,
+  .add-ticket-row select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--table-border);
+    font-size: 13.5px;
+    background: var(--surface);
+    color: var(--ink);
+  }
+  .add-ticket-row .field { min-width: 140px; }
+  .add-ticket-row .field-wide { min-width: 220px; flex: 1 1 220px; }
+  .add-ticket-row .btn-primary { padding: 9px 18px; font-size: 13.5px; }
+  #add-ticket-warning { color: var(--bad); font-size: 12px; margin: 8px 0 0; min-height: 14px; }
+  @media print { .add-ticket-row, #add-ticket-warning { display: none !important; } }
+
+  /* ---- Add new análise/comentário form (Section 5) ---- */
+  .add-analise-row {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  .add-analise-row .field { display: flex; flex-direction: column; gap: 6px; min-width: 160px; }
+  .add-analise-row .field label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-weight: 700;
+    color: var(--brand-dark);
+  }
+  .add-analise-row input,
+  .add-analise-row select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--table-border);
+    font-size: 13.5px;
+    background: var(--surface);
+    color: var(--ink);
+  }
+  .add-analise-row .field-wide { min-width: 260px; flex: 1 1 260px; }
+  .add-analise-row .btn-primary { padding: 9px 18px; font-size: 13.5px; }
+  #add-analise-warning { color: var(--bad); font-size: 12px; margin: 8px 0 0; min-height: 14px; }
+  @media print { .add-analise-row, #add-analise-warning, #add-acomp-warning, #add-sug-warning, #add-conjunta-warning, #add-aviso-warning, #add-impacto-warning, #add-bdfix-warning, #add-bug-warning { display: none !important; } }
+
+  /* ---- TXT import/export actions ---- */
+  .txt-actions {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn-secondary {
+    background: var(--surface);
+    color: var(--brand-dark);
+    border: 1px solid var(--table-border);
+    padding: 9px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+  .btn-secondary:hover { background: var(--surface-2); }
+  .txt-hint { font-size: 11.5px; color: var(--ink-soft); }
+  #tickets-txt-warning { color: var(--bad); font-size: 12px; margin: 8px 0 0; min-height: 14px; }
+  @media print { .txt-actions, #tickets-txt-warning, #meta-txt-warning, #analise-txt-warning, #acomp-txt-warning, #sug-txt-warning, #conjunta-txt-warning, #aviso-txt-warning, #impacto-txt-warning, #bdfix-txt-warning, #bug-txt-warning { display: none !important; } }
+
+
+  /* ---- PDF export action ---- */
+  #pdf-actions {
+    max-width: 1080px;
+    margin: 0 auto 28px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+  }
+  #gerar-pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand-dark);
+    color: #fff;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 999px;
+    font-size: 14.5px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(29,51,73,.25);
+  }
+  #gerar-pdf-btn:hover { background: var(--brand); }
+  #pdf-actions .pdf-hint {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
+  /* =====================================================================
+     Mobile (Android/phone) optimizations
+     ===================================================================== */
+  @media (max-width: 640px) {
+    body { font-size: 14px; }
+
+    header.doc-header { padding: 22px 16px 20px; }
+    header.doc-header .eyebrow { font-size: 10.5px; margin-bottom: 6px; }
+    header.doc-header h1 { font-size: 20px; line-height: 1.3; margin-bottom: 12px; }
+    .meta-strip { gap: 8px 18px; font-size: 12.5px; }
+    #edit-meeting-btn { padding: 8px 14px; font-size: 12px; margin-top: 14px; width: 100%; justify-content: center; }
+
+    /* Nav becomes a single horizontally scrollable strip instead of wrapping */
+    nav.toc {
+      margin: -14px 12px 0;
+      padding: 10px 14px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 4px 16px;
+      scrollbar-width: thin;
+    }
+    nav.toc a { white-space: nowrap; font-size: 12.5px; flex: 0 0 auto; }
+
+    main { margin: 20px auto 56px; padding: 0 12px; }
+    section.card { padding: 18px 14px 22px; margin-bottom: 16px; border-radius: 8px; }
+    section.card h2 { font-size: 16.5px; gap: 8px; margin-bottom: 14px; }
+    section.card h2 .num { font-size: 11.5px; padding: 2px 6px; }
+
+    table { font-size: 12.5px; }
+    th, td { padding: 7px 8px; }
+    th { font-size: 10.5px; }
+
+    .kpi-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .kpi { padding: 10px 12px; }
+    .kpi .kpi-val { font-size: 18px; }
+    .kpi .kpi-label { font-size: 10px; }
+
+    /* Add-row forms: stack fields full-width, easier to tap and type */
+    .add-meta-row, .add-ticket-row, .add-analise-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+    .add-meta-row .field,
+    .add-ticket-row .field,
+    .add-analise-row .field {
+      min-width: 0;
+      width: 100%;
+    }
+    .add-meta-row input#new-periodo,
+    .add-meta-row .field-narrow input,
+    .add-ticket-row .field-wide,
+    .add-analise-row .field-wide { width: 100%; }
+    .add-meta-row input,
+    .add-meta-row select,
+    .add-ticket-row input,
+    .add-ticket-row select,
+    .add-analise-row input,
+    .add-analise-row select {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px 12px;
+      min-height: 42px;
+    }
+    .add-meta-row .field-preview { align-items: center; }
+    .add-meta-row .btn-primary,
+    .add-ticket-row .btn-primary,
+    .add-analise-row .btn-primary {
+      width: 100%;
+      padding: 12px 18px;
+      font-size: 14.5px;
+    }
+
+    .txt-actions { flex-direction: column; align-items: stretch; gap: 8px; }
+    .btn-secondary { width: 100%; padding: 11px 16px; text-align: center; }
+    .txt-hint { text-align: center; }
+
+    .remove-row-btn { padding: 6px 12px; font-size: 11px; min-height: 32px; }
+
+    .notice-list li { padding: 10px 12px; gap: 8px; }
+    .notice-list li .notice-text { font-size: 13px; }
+
+    .setup-card { padding: 20px 16px; border-radius: 10px; }
+    .setup-card h1 { font-size: 18px; }
+    .setup-card .sub { font-size: 12.5px; }
+    .member-grid { grid-template-columns: 1fr; }
+    .select-row { grid-template-columns: 1fr; gap: 12px; }
+    .select-row select { min-height: 42px; font-size: 16px; }
+    .setup-actions { justify-content: stretch; }
+    .setup-actions .btn-primary { width: 100%; padding: 12px 20px; }
+
+    #pdf-actions { padding: 0 12px; }
+    #gerar-pdf-btn { width: 100%; justify-content: center; padding: 13px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="setup-screen">
+  <div class="setup-card">
+    <div class="eyebrow">Configurar reunião</div>
+    <h1>Quem participou do alinhamento de hoje?</h1>
+    <p class="sub">Marque cada membro como Presente ou Ausente. Depois escolha o Responsável e quem ficou com a Ata — ambos precisam estar entre os presentes.</p>
+
+    <div class="setup-section">
+      <label class="group-label">Membros da equipe N3</label>
+      <div class="member-grid" id="member-grid"></div>
+    </div>
+
+    <div class="setup-section select-row">
+      <div class="field">
+        <label for="sel-responsavel">Responsável pela reunião</label>
+        <select id="sel-responsavel"><option value="">Selecione…</option></select>
+      </div>
+      <div class="field">
+        <label for="sel-ata">Ata por</label>
+        <select id="sel-ata"><option value="">Selecione…</option></select>
+      </div>
+    </div>
+    <p class="setup-hint" id="setup-warning"></p>
+
+    <div class="setup-actions">
+      <button class="btn-primary" id="generate-btn" disabled>Gerar ata da reunião</button>
+    </div>
+  </div>
+</div>
+
+<div id="report-root" class="report-hidden">
+
+<header class="doc-header">
+  <div class="eyebrow">Ata de Reunião · Desenvolvimento N3</div>
+  <h1>Alinhamento Semanal do Desenvolvimento — Nível 3</h1>
+  <div class="meta-strip">
+    <div><span class="label">Data</span><span id="ms-data">17 de agosto de 2026</span></div>
+    <div><span class="label">Responsável pela reunião</span><span id="ms-responsavel">—</span></div>
+    <div><span class="label">Ata por</span><span id="ms-ata">—</span></div>
+    <div><span class="label">Participantes</span><span id="ms-participantes">—</span></div>
+    <div><span class="label">Ausentes</span><span id="ms-ausentes">—</span></div>
+  </div>
+  <button id="edit-meeting-btn" type="button">↺ Alterar participantes</button>
+</header>
+
+<nav class="toc">
+  <a href="#sec1">1. Identificação</a>
+  <a href="#sec2">2. Tickets Prioritários</a>
+  <a href="#sec3">3. Meta × Realizado</a>
+  <a href="#sec4">4. Desempenho Acumulado</a>
+  <a href="#sec5">5. Análise e Feedbacks</a>
+  <a href="#sec6">6. Acompanhamento</a>
+  <a href="#sec7">7. Sugestões</a>
+  <a href="#sec8">8. Análise Conjunta N3</a>
+  <a href="#sec9">9. Avisos</a>
+  <a href="#sec10">10. Impactos da Semana</a>
+  <a href="#sec11">11. BDFix Recentes</a>
+  <a href="#sec12">12. Bugs Recentes</a>
+</nav>
+
+<main>
+
+<section class="card" id="sec1">
+  <h2><span class="num">01</span> Identificação da Reunião</h2>
+  <div class="table-scroll">
+  <table>
+    <tr><th>Data</th><td id="tbl-data">17 de agosto de 2026</td><th>Responsável</th><td id="tbl-responsavel">—</td></tr>
+    <tr><th>Participantes</th><td id="tbl-participantes">—</td><th>Ata por</th><td id="tbl-ata">—</td></tr>
+    <tr><th>Ausentes</th><td colspan="3" id="tbl-ausentes">—</td></tr>
+  </table>
+  </div>
+</section>
+
+<section class="card" id="sec2">
+  <h2><span class="num">02</span> Tickets Prioritários da Semana</h2>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr id="tickets-thead-row"><th class="sortable-th" data-sort-col="0">Ticket</th><th class="sortable-th" data-sort-col="1">Rede</th><th class="sortable-th" data-sort-col="2">Responsável</th><th class="sortable-th" data-sort-col="3">Motivo</th><th class="sortable-th" data-sort-col="4">Check-point Semanal</th><th class="col-actions">Ações</th></tr>
+    </thead>
+    <tbody id="tickets-tbody">
+    </tbody>
+  </table>
+  </div>
+
+  <div class="add-ticket-row">
+    <div class="field">
+      <label for="new-ticket-numero">Ticket</label>
+      <input type="text" id="new-ticket-numero" placeholder="ex.: 530120">
+    </div>
+    <div class="field">
+      <label for="new-ticket-rede">Rede</label>
+      <input type="text" id="new-ticket-rede" list="redes-datalist" placeholder="Digite para buscar…" autocomplete="off">
+      <datalist id="redes-datalist"></datalist>
+    </div>
+    <div class="field">
+      <label for="new-ticket-responsavel">Responsável</label>
+      <select id="new-ticket-responsavel"><option value="">Selecione…</option></select>
+    </div>
+    <div class="field">
+      <label for="new-ticket-motivo">Motivo</label>
+      <select id="new-ticket-motivo"><option value="">Selecione…</option></select>
+    </div>
+    <div class="field field-wide">
+      <label for="new-ticket-checkpoint">Check-point Semanal</label>
+      <input type="text" id="new-ticket-checkpoint" placeholder="opcional">
+    </div>
+    <button class="btn-primary" id="add-ticket-btn" type="button" disabled>Adicionar</button>
+  </div>
+  <p class="setup-hint" id="add-ticket-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-tickets-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-tickets-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-tickets-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Formato: Ticket | Rede | Responsável | Motivo | Check-point (um por linha)</span>
+  </div>
+  <p class="setup-hint" id="tickets-txt-warning"></p>
+</section>
+
+<section class="card" id="sec3">
+  <h2><span class="num">03</span> Meta Semanal × Realizado</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Período</th><th>Esperado</th><th>Realizado</th><th>% da Meta</th><th class="col-actions">Ações</th></tr></thead>
+    <tbody id="meta-tbody">
+    </tbody>
+  </table>
+  </div>
+
+  <div class="add-meta-row">
+    <div class="field">
+      <label for="new-periodo">Novo período</label>
+      <input type="text" id="new-periodo" placeholder="ex.: 17/08/2026 – 21/08/2026">
+    </div>
+    <div class="field field-narrow">
+      <label for="new-realizado">Realizado</label>
+      <input type="number" id="new-realizado" step="1" min="0" placeholder="0">
+    </div>
+    <div class="field field-narrow">
+      <label>Esperado</label>
+      <input type="text" value="15" disabled>
+    </div>
+    <div class="field field-preview">
+      <label>% da Meta</label>
+      <span id="new-pct-preview" class="pill pill-neutral">—</span>
+    </div>
+    <button class="btn-primary" id="add-meta-btn" type="button" disabled>Adicionar período</button>
+  </div>
+  <p class="setup-hint" id="add-meta-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-meta-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-meta-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-meta-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Formato: Período | Esperado | Realizado (um por linha)</span>
+  </div>
+  <p class="setup-hint" id="meta-txt-warning"></p>
+</section>
+
+<section class="card" id="sec4">
+  <h2><span class="num">04</span> Desempenho Acumulado (<span id="sec4-title-count">25</span> Períodos)</h2>
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-val" id="kpi-total-periodos">25</div><div class="kpi-label">Total de períodos</div></div>
+    <div class="kpi"><div class="kpi-val" id="kpi-metas-atingidas" style="color:var(--good)">60,00%</div><div class="kpi-label">Metas atingidas/superadas</div></div>
+    <div class="kpi"><div class="kpi-val" id="kpi-abaixo-meta" style="color:var(--bad)">40,00%</div><div class="kpi-label">Abaixo da meta</div></div>
+    <div class="kpi"><div class="kpi-val" id="kpi-desempenho-geral">117,33%</div><div class="kpi-label">Desempenho acumulado geral</div></div>
+  </div>
+  <div class="chart-wrap">
+    <div id="sec4-chart" class="chart-svg-container"></div>
+    <div class="chart-zoom-hint">🔍 Use o scroll do mouse sobre o gráfico para dar zoom na área desejada · duplo clique para restaurar</div>
+    <div class="chart-caption">Desempenho Semanal: Meta vs. Realizado (<span id="sec4-caption-count">25</span> Períodos) — barras verdes indicam meta atingida ou superada, vermelhas indicam abaixo da meta.</div>
+  </div>
+</section>
+
+<section class="card" id="sec5">
+
+  <h2><span class="num">05</span> Análise, Comentários e Feedbacks</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Responsável</th><th>Tipo</th><th>Comentário</th><th class="col-actions">Ações</th></tr></thead>
+    <tbody id="analise-tbody">
+    </tbody>
+  </table>
+  </div>
+
+  <div class="add-analise-row">
+    <div class="field">
+      <label for="new-analise-responsavel">Responsável</label>
+      <select id="new-analise-responsavel"><option value="">Selecione…</option></select>
+    </div>
+    <div class="field">
+      <label for="new-analise-tipo">Tipo</label>
+      <select id="new-analise-tipo">
+        <option value="">Selecione…</option>
+        <option value="Comentário">Comentário</option>
+        <option value="Análise">Análise</option>
+        <option value="Feedback">Feedback</option>
+      </select>
+    </div>
+    <div class="field field-wide">
+      <label for="new-analise-comentario">Comentário</label>
+      <input type="text" id="new-analise-comentario" placeholder="Digite o comentário…">
+    </div>
+    <button class="btn-primary" id="add-analise-btn" type="button" disabled>Adicionar</button>
+  </div>
+  <p class="setup-hint" id="add-analise-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-analise-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-analise-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-analise-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Formato: Responsável | Tipo | Comentário (um por linha)</span>
+  </div>
+  <p class="setup-hint" id="analise-txt-warning"></p>
+</section>
+
+<section class="card" id="sec6">
+  <h2><span class="num">06</span> Acompanhamento</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Responsável</th><th>Ticket</th><th>Comentário</th><th class="col-actions">Ações</th></tr></thead>
+    <tbody id="acompanhamento-tbody">
+    </tbody>
+  </table>
+  </div>
+
+  <div class="add-analise-row">
+    <div class="field">
+      <label for="new-acomp-responsavel">Responsável</label>
+      <select id="new-acomp-responsavel"><option value="">Selecione…</option></select>
+    </div>
+    <div class="field">
+      <label for="new-acomp-ticket">Ticket</label>
+      <input type="text" id="new-acomp-ticket" placeholder="ex.: 530120">
+    </div>
+    <div class="field field-wide">
+      <label for="new-acomp-comentario">Comentário</label>
+      <input type="text" id="new-acomp-comentario" placeholder="Digite o comentário…">
+    </div>
+    <button class="btn-primary" id="add-acomp-btn" type="button" disabled>Adicionar</button>
+  </div>
+  <p class="setup-hint" id="add-acomp-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-acomp-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-acomp-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-acomp-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Formato: Responsável | Ticket | Comentário (um por linha)</span>
+  </div>
+  <p class="setup-hint" id="acomp-txt-warning"></p>
+</section>
+
+<section class="card" id="sec7">
+  <h2><span class="num">07</span> Sugestões</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Responsável</th><th>Ticket</th><th>Sugestão</th><th class="col-actions">Ações</th></tr></thead>
+    <tbody id="sugestoes-tbody">
+    </tbody>
+  </table>
+  </div>
+
+  <div class="add-analise-row">
+    <div class="field">
+      <label for="new-sug-responsavel">Responsável</label>
+      <select id="new-sug-responsavel"><option value="">Selecione…</option></select>
+    </div>
+    <div class="field">
+      <label for="new-sug-ticket">Ticket (opcional)</label>
+      <input type="text" id="new-sug-ticket" placeholder="ex.: 530120">
+    </div>
+    <div class="field field-wide">
+      <label for="new-sug-texto">Sugestão</label>
+      <input type="text" id="new-sug-texto" placeholder="Digite a sugestão…">
+    </div>
+    <button class="btn-primary" id="add-sug-btn" type="button" disabled>Adicionar</button>
+  </div>
+  <p class="setup-hint" id="add-sug-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-sug-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-sug-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-sug-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Formato: Responsável | Ticket (opcional) | Sugestão (um por linha)</span>
+  </div>
+  <p class="setup-hint" id="sug-txt-warning"></p>
+</section>
+
+<section class="card" id="sec8">
+  <h2><span class="num">08</span> Tickets — Análise Conjunta N3</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Responsável</th><th>Ticket</th><th class="col-actions">Ações</th></tr></thead>
+    <tbody id="conjunta-tbody">
+    </tbody>
+  </table>
+  </div>
+
+  <div class="add-analise-row">
+    <div class="field">
+      <label for="new-conjunta-responsavel">Responsável</label>
+      <select id="new-conjunta-responsavel"><option value="">Selecione…</option></select>
+    </div>
+    <div class="field field-wide">
+      <label for="new-conjunta-ticket">Ticket (opcional)</label>
+      <input type="text" id="new-conjunta-ticket" placeholder="ex.: 530120 ou 530120 / 530121">
+    </div>
+    <button class="btn-primary" id="add-conjunta-btn" type="button" disabled>Adicionar</button>
+  </div>
+  <p class="setup-hint" id="add-conjunta-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-conjunta-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-conjunta-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-conjunta-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Formato: Responsável | Ticket (opcional, vários separados por " / ") — um por linha</span>
+  </div>
+  <p class="setup-hint" id="conjunta-txt-warning"></p>
+</section>
+
+<section class="card" id="sec9">
+  <h2><span class="num">09</span> Avisos</h2>
+  <ul class="notice-list" id="avisos-list">
+  </ul>
+
+  <div class="add-analise-row">
+    <div class="field field-wide">
+      <label for="new-aviso-texto">Novo aviso</label>
+      <input type="text" id="new-aviso-texto" placeholder="Digite o aviso…">
+    </div>
+    <button class="btn-primary" id="add-aviso-btn" type="button" disabled>Adicionar</button>
+  </div>
+  <p class="setup-hint" id="add-aviso-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-aviso-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-aviso-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-aviso-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Um aviso por linha</span>
+  </div>
+  <p class="setup-hint" id="aviso-txt-warning"></p>
+</section>
+
+<section class="card" id="sec10">
+  <h2><span class="num">10</span> Impactos / Acontecimentos da Semana</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Semana</th><th>Informação</th><th class="col-actions">Ações</th></tr></thead>
+    <tbody id="impactos-tbody">
+    </tbody>
+  </table>
+  </div>
+
+  <div class="add-analise-row">
+    <div class="field">
+      <label for="new-impacto-semana">Semana</label>
+      <input type="text" id="new-impacto-semana" placeholder="ex.: 17/08/2026 - 21/08/2026">
+    </div>
+    <div class="field field-wide">
+      <label for="new-impacto-info">Informação</label>
+      <input type="text" id="new-impacto-info" placeholder="Digite o impacto/acontecimento da semana…">
+    </div>
+    <button class="btn-primary" id="add-impacto-btn" type="button" disabled>Adicionar</button>
+  </div>
+  <p class="setup-hint" id="add-impacto-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-impacto-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-impacto-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-impacto-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Formato: Semana | Informação (um por linha)</span>
+  </div>
+  <p class="setup-hint" id="impacto-txt-warning"></p>
+</section>
+
+<section class="card" id="sec11">
+  <h2><span class="num">11</span> BDFix — Recentes</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Ticket</th><th>Título</th><th>Local</th><th class="col-actions">Ações</th></tr></thead>
+    <tbody id="bdfix-tbody">
+    </tbody>
+  </table>
+  </div>
+
+  <div class="add-analise-row">
+    <div class="field">
+      <label for="new-bdfix-ticket">Ticket</label>
+      <input type="text" id="new-bdfix-ticket" placeholder="ex.: 530120">
+    </div>
+    <div class="field field-wide">
+      <label for="new-bdfix-titulo">Título</label>
+      <input type="text" id="new-bdfix-titulo" placeholder="Digite o título…">
+    </div>
+    <div class="field">
+      <label for="new-bdfix-local">Local</label>
+      <select id="new-bdfix-local">
+        <option value="">Selecione…</option>
+        <option value="NUVEM">NUVEM</option>
+        <option value="LOCAL">LOCAL</option>
+      </select>
+    </div>
+    <button class="btn-primary" id="add-bdfix-btn" type="button" disabled>Adicionar</button>
+  </div>
+  <p class="setup-hint" id="add-bdfix-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-bdfix-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-bdfix-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-bdfix-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Formato: Ticket | Título | Local (um por linha)</span>
+  </div>
+  <p class="setup-hint" id="bdfix-txt-warning"></p>
+</section>
+
+<section class="card" id="sec12">
+  <h2><span class="num">12</span> Bugs Recentes</h2>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>Ticket</th><th>Título / Módulo</th><th>Descrição do Problema</th><th>Solução / Ação Realizada</th><th class="col-actions">Ações</th></tr></thead>
+    <tbody id="bugs-tbody">
+    </tbody>
+  </table>
+  </div>
+
+  <div class="add-analise-row">
+    <div class="field">
+      <label for="new-bug-ticket">Ticket</label>
+      <input type="text" id="new-bug-ticket" placeholder="ex.: 530120">
+    </div>
+    <div class="field field-wide">
+      <label for="new-bug-titulo">Título / Módulo</label>
+      <input type="text" id="new-bug-titulo" placeholder="Digite o título/módulo…">
+    </div>
+    <div class="field field-wide">
+      <label for="new-bug-descricao">Descrição do Problema</label>
+      <input type="text" id="new-bug-descricao" placeholder="Digite a descrição do problema…">
+    </div>
+    <div class="field field-wide">
+      <label for="new-bug-solucao">Solução / Ação Realizada</label>
+      <input type="text" id="new-bug-solucao" placeholder="Digite a solução/ação realizada…">
+    </div>
+    <button class="btn-primary" id="add-bug-btn" type="button" disabled>Adicionar</button>
+  </div>
+  <p class="setup-hint" id="add-bug-warning"></p>
+
+  <div class="txt-actions">
+    <button class="btn-secondary" id="save-bug-txt-btn" type="button">💾 Salvar TXT</button>
+    <button class="btn-secondary" id="load-bug-txt-btn" type="button">📂 Carregar TXT</button>
+    <input type="file" id="load-bug-txt-input" accept=".txt" style="display:none;">
+    <span class="txt-hint">Formato: Ticket | Título/Módulo | Descrição | Solução (um por linha)</span>
+  </div>
+  <p class="setup-hint" id="bug-txt-warning"></p>
+</section>
+
+
+</main>
+
+<div id="pdf-actions">
+  <div>
+    <button id="gerar-pdf-btn" type="button">⬇ Gerar em PDF</button>
+    <span class="pdf-hint">Cada tópico numerado é impresso em página própria.</span>
+  </div>
+</div>
+
+<footer>
+  Ata gerada a partir do documento original — Alinhamento Semanal do Desenvolvimento N3 · <span id="footer-data">17/08/2026</span>
+</footer>
+
+</div><!-- /#report-root -->
+
+<script>
+(function () {
+  /* ---- Set the meeting date to today (defaults to the day the ata is generated) ---- */
+  (function setTodayAsMeetingDate() {
+    var today = new Date();
+    var longDate = today.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+    var shortDate = ('0' + today.getDate()).slice(-2) + '/' + ('0' + (today.getMonth() + 1)).slice(-2) + '/' + today.getFullYear();
+
+    var msData = document.getElementById('ms-data');
+    var tblData = document.getElementById('tbl-data');
+    var footerData = document.getElementById('footer-data');
+    if (msData) msData.textContent = longDate;
+    if (tblData) tblData.textContent = longDate;
+    if (footerData) footerData.textContent = shortDate;
+  })();
+
+  /* ---- Pre-fill "Novo período" with the current week (Monday–Friday) ---- */
+  (function setCurrentWeekAsDefaultPeriodo() {
+    function pad(n) { return ('0' + n).slice(-2); }
+    function formatDate(d) { return pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear(); }
+
+    var today = new Date();
+    var dayOfWeek = today.getDay(); // 0 = Sunday ... 6 = Saturday
+    var mondayOffset = dayOfWeek === 0 ? -6 : (1 - dayOfWeek);
+
+    var monday = new Date(today);
+    monday.setDate(today.getDate() + mondayOffset);
+    var friday = new Date(monday);
+    friday.setDate(monday.getDate() + 4);
+
+    var weekRange = formatDate(monday) + ' – ' + formatDate(friday);
+
+    var newPeriodoInput = document.getElementById('new-periodo');
+    if (newPeriodoInput) newPeriodoInput.value = weekRange;
+  })();
+
+  var MEMBERS = [
+    "Flaubert",
+    "Felipe Vieira",
+    "Rafael Jr",
+    "Wesley Phillipe",
+    "Guilherme G2",
+    "Fernando",
+    "Artur",
+    "Danilson Bezerra"
+  ];
+
+  var status = {}; // name -> 'presente' | 'ausente'
+  MEMBERS.forEach(function (m) { status[m] = 'presente'; });
+
+  var grid = document.getElementById('member-grid');
+  var selResponsavel = document.getElementById('sel-responsavel');
+  var selAta = document.getElementById('sel-ata');
+  var generateBtn = document.getElementById('generate-btn');
+  var warningEl = document.getElementById('setup-warning');
+
+  function renderMembers() {
+    grid.innerHTML = '';
+    var sortedMembers = MEMBERS.slice().sort(function (a, b) {
+      return a.localeCompare(b, 'pt-BR', { sensitivity: 'base' });
+    });
+    sortedMembers.forEach(function (name) {
+      var row = document.createElement('div');
+      row.className = 'member-row';
+
+      var label = document.createElement('span');
+      label.className = 'member-name';
+      label.textContent = name;
+
+      var toggle = document.createElement('div');
+      toggle.className = 'status-toggle';
+
+      var btnP = document.createElement('button');
+      btnP.type = 'button';
+      btnP.textContent = 'Presente';
+      var btnA = document.createElement('button');
+      btnA.type = 'button';
+      btnA.textContent = 'Ausente';
+
+      function refresh() {
+        btnP.className = status[name] === 'presente' ? 'active-presente' : '';
+        btnA.className = status[name] === 'ausente' ? 'active-ausente' : '';
+      }
+      btnP.addEventListener('click', function () { status[name] = 'presente'; refresh(); syncSelects(); });
+      btnA.addEventListener('click', function () { status[name] = 'ausente'; refresh(); syncSelects(); });
+      refresh();
+
+      toggle.appendChild(btnP);
+      toggle.appendChild(btnA);
+      row.appendChild(label);
+      row.appendChild(toggle);
+      grid.appendChild(row);
+    });
+  }
+
+  function syncSelects() {
+    var presentes = MEMBERS.filter(function (m) { return status[m] === 'presente'; })
+      .slice()
+      .sort(function (a, b) { return a.localeCompare(b, 'pt-BR', { sensitivity: 'base' }); });
+
+    [selResponsavel, selAta].forEach(function (sel) {
+      var current = sel.value;
+      sel.innerHTML = '<option value="">Selecione…</option>';
+      presentes.forEach(function (name) {
+        var opt = document.createElement('option');
+        opt.value = name;
+        opt.textContent = name;
+        sel.appendChild(opt);
+      });
+      if (presentes.indexOf(current) !== -1) {
+        sel.value = current;
+      }
+    });
+
+    validate();
+  }
+
+  function validate() {
+    var presentes = MEMBERS.filter(function (m) { return status[m] === 'presente'; });
+    var ok = presentes.length > 0 && selResponsavel.value && selAta.value;
+    generateBtn.disabled = !ok;
+    warningEl.textContent = presentes.length === 0
+      ? 'Marque ao menos um membro como Presente para continuar.'
+      : '';
+  }
+
+  selResponsavel.addEventListener('change', validate);
+  selAta.addEventListener('change', validate);
+
+  generateBtn.addEventListener('click', function () {
+    var presentes = MEMBERS.filter(function (m) { return status[m] === 'presente'; });
+    var ausentes = MEMBERS.filter(function (m) { return status[m] === 'ausente'; });
+    var responsavel = selResponsavel.value;
+    var ata = selAta.value;
+
+    var presentesTxt = presentes.join(', ') || '—';
+    var ausentesTxt = ausentes.join(', ') || '—';
+
+    document.getElementById('ms-responsavel').textContent = responsavel;
+    document.getElementById('ms-ata').textContent = ata;
+    document.getElementById('ms-participantes').textContent = presentesTxt;
+    document.getElementById('ms-ausentes').textContent = ausentesTxt;
+
+    document.getElementById('tbl-responsavel').textContent = responsavel;
+    document.getElementById('tbl-ata').textContent = ata;
+    document.getElementById('tbl-participantes').textContent = presentesTxt;
+    document.getElementById('tbl-ausentes').textContent = ausentesTxt;
+
+    document.getElementById('setup-screen').classList.add('report-hidden');
+    document.getElementById('report-root').classList.remove('report-hidden');
+    window.scrollTo(0, 0);
+  });
+
+  document.getElementById('edit-meeting-btn').addEventListener('click', function () {
+    document.getElementById('report-root').classList.add('report-hidden');
+    document.getElementById('setup-screen').classList.remove('report-hidden');
+    window.scrollTo(0, 0);
+  });
+
+  renderMembers();
+  syncSelects();
+
+  /* ---- Section 3: add new Meta Semanal x Realizado period ---- */
+  var ESPERADO = 15;
+  var periodoInput = document.getElementById('new-periodo');
+  var realizadoInput = document.getElementById('new-realizado');
+  var pctPreview = document.getElementById('new-pct-preview');
+  var addMetaBtn = document.getElementById('add-meta-btn');
+  var addMetaWarning = document.getElementById('add-meta-warning');
+  var metaTbody = document.getElementById('meta-tbody');
+
+  function pctClass(pct) {
+    if (pct < 90) return 'pill-bad';
+    if (pct < 100) return 'pill-warn';
+    return 'pill-good';
+  }
+
+  function currentPct() {
+    var realizado = parseInt(realizadoInput.value, 10);
+    if (isNaN(realizado) || realizado < 0) return null;
+    return { realizado: realizado, pct: Math.round((realizado / ESPERADO) * 100) };
+  }
+
+  function updatePreview() {
+    var periodoOk = periodoInput.value.trim().length > 0;
+    var calc = currentPct();
+
+    if (calc === null) {
+      pctPreview.textContent = '—';
+      pctPreview.className = 'pill pill-neutral';
+    } else {
+      pctPreview.textContent = calc.pct + '%';
+      pctPreview.className = 'pill ' + pctClass(calc.pct);
+    }
+
+    var ok = periodoOk && calc !== null;
+    addMetaBtn.disabled = !ok;
+    addMetaWarning.textContent = '';
+  }
+
+  periodoInput.addEventListener('input', updatePreview);
+  realizadoInput.addEventListener('input', updatePreview);
+
+  addMetaBtn.addEventListener('click', function () {
+    var periodo = periodoInput.value.trim();
+    var calc = currentPct();
+    if (!periodo || calc === null) {
+      addMetaWarning.textContent = 'Informe o período e um valor de Realizado válido.';
+      return;
+    }
+
+    var tr = document.createElement('tr');
+
+    var tdPeriodo = document.createElement('td');
+    tdPeriodo.textContent = periodo;
+
+    var tdEsperado = document.createElement('td');
+    tdEsperado.textContent = String(ESPERADO);
+
+    var tdRealizado = document.createElement('td');
+    tdRealizado.textContent = String(calc.realizado);
+    tdRealizado.className = 'realizado-cell ' + (calc.realizado >= ESPERADO ? 'up' : 'down');
+
+    var tdPct = document.createElement('td');
+    var pill = document.createElement('span');
+    pill.className = 'pill ' + pctClass(calc.pct);
+    pill.textContent = calc.pct + '%';
+    tdPct.appendChild(pill);
+
+    var tdActions = document.createElement('td');
+    tdActions.className = 'col-actions';
+    var removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.className = 'remove-row-btn';
+    removeBtn.title = 'Remover período';
+    removeBtn.textContent = 'Remover';
+    tdActions.appendChild(removeBtn);
+
+    tr.appendChild(tdPeriodo);
+    tr.appendChild(tdEsperado);
+    tr.appendChild(tdRealizado);
+    tr.appendChild(tdPct);
+    tr.appendChild(tdActions);
+    metaTbody.appendChild(tr);
+
+    periodoInput.value = '';
+    realizadoInput.value = '';
+    updatePreview();
+    recalcSec4();
+  });
+
+  updatePreview();
+
+  /* Remove a period row (works for both pre-loaded and newly added rows) */
+  metaTbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var row = btn.closest('tr');
+    if (row) row.remove();
+    recalcSec4();
+  });
+
+  /* ---- Section 4: recalculate Desempenho Acumulado from Section 3 rows ---- */
+  function formatPct(n) {
+    return n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+  }
+
+  function recalcSec4() {
+    var rows = metaTbody.querySelectorAll('tr');
+    var totalPeriodos = rows.length;
+    var totalEsperado = 0;
+    var totalRealizado = 0;
+    var atingidos = 0;
+    var abaixo = 0;
+
+    rows.forEach(function (row) {
+      var cells = row.querySelectorAll('td');
+      var esperado = parseInt(cells[1].textContent, 10) || 0;
+      var realizado = parseInt(cells[2].textContent, 10) || 0;
+      totalEsperado += esperado;
+      totalRealizado += realizado;
+      if (realizado >= esperado) {
+        atingidos++;
+      } else {
+        abaixo++;
+      }
+    });
+
+    var pctAtingidos = totalPeriodos > 0 ? (atingidos / totalPeriodos) * 100 : 0;
+    var pctAbaixo = totalPeriodos > 0 ? (abaixo / totalPeriodos) * 100 : 0;
+    var desempenhoGeral = totalEsperado > 0 ? (totalRealizado / totalEsperado) * 100 : 0;
+
+    document.getElementById('kpi-total-periodos').textContent = totalPeriodos;
+    document.getElementById('sec4-title-count').textContent = totalPeriodos;
+    document.getElementById('sec4-caption-count').textContent = totalPeriodos;
+    document.getElementById('kpi-metas-atingidas').textContent = formatPct(pctAtingidos);
+    document.getElementById('kpi-abaixo-meta').textContent = formatPct(pctAbaixo);
+    document.getElementById('kpi-desempenho-geral').textContent = formatPct(desempenhoGeral);
+
+    renderChart();
+  }
+
+  /* ---- Section 4: build the bar chart (SVG) from Section 3 rows ---- */
+  var chartZoom = 1;
+
+  function renderChart() {
+    var container = document.getElementById('sec4-chart');
+    chartZoom = 1; // reset zoom whenever the chart is rebuilt with new data
+    var rows = Array.prototype.slice.call(metaTbody.querySelectorAll('tr'));
+    if (rows.length === 0) {
+      container.innerHTML = '<p style="padding:24px;color:var(--ink-soft);font-size:13px;">Sem períodos para exibir.</p>';
+      return;
+    }
+
+    var data = rows.map(function (row) {
+      var cells = row.querySelectorAll('td');
+      var periodo = cells[0].textContent.trim();
+      var esperado = parseInt(cells[1].textContent, 10) || 0;
+      var realizado = parseInt(cells[2].textContent, 10) || 0;
+      var pct = esperado > 0 ? Math.round((realizado / esperado) * 100) : 0;
+      return { periodo: periodo, esperado: esperado, realizado: realizado, pct: pct };
+    });
+
+    var n = data.length;
+    var barW = 34;
+    var gap = 14;
+    var leftPad = 55;
+    var rightPad = 20;
+    var topPad = 40;
+    var bottomPad = 95;
+    var plotH = 320;
+
+    var maxVal = Math.max.apply(null, data.map(function (d) { return Math.max(d.esperado, d.realizado); }));
+    var yMax = Math.max(5, Math.ceil((maxVal * 1.15) / 5) * 5);
+
+    var plotW = n * (barW + gap);
+    var svgW = leftPad + plotW + rightPad;
+    var svgH = topPad + plotH + bottomPad;
+
+    function yScale(v) { return topPad + plotH - (v / yMax) * plotH; }
+
+    var svg = '<svg viewBox="0 0 ' + svgW + ' ' + svgH + '" width="' + svgW + '" height="' + svgH + '" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans 3, Segoe UI, Arial, sans-serif">';
+
+    // Y-axis gridlines and labels
+    var ticks = 5;
+    for (var t = 0; t <= ticks; t++) {
+      var val = Math.round((yMax / ticks) * t);
+      var y = yScale(val);
+      svg += '<line x1="' + leftPad + '" y1="' + y + '" x2="' + (leftPad + plotW) + '" y2="' + y + '" style="stroke:var(--line)" stroke-width="1"/>';
+      svg += '<text x="' + (leftPad - 10) + '" y="' + (y + 4) + '" text-anchor="end" font-size="11" style="fill:var(--ink-soft)">' + val + '</text>';
+    }
+
+    // Meta reference line (use the esperado of the first row as the reference)
+    var metaRef = data[0] ? data[0].esperado : 0;
+    if (metaRef > 0) {
+      var yMeta = yScale(metaRef);
+      svg += '<line x1="' + leftPad + '" y1="' + yMeta + '" x2="' + (leftPad + plotW) + '" y2="' + yMeta + '" style="stroke:var(--ink)" stroke-width="2" stroke-dasharray="6,4"/>';
+      svg += '<text x="' + (leftPad + plotW - 4) + '" y="' + (yMeta - 6) + '" text-anchor="end" font-size="11" font-weight="700" style="fill:var(--ink)">Meta Esperada (' + metaRef + ')</text>';
+    }
+
+    // Bars
+    data.forEach(function (d, i) {
+      var x = leftPad + i * (barW + gap);
+      var yTop = yScale(d.realizado);
+      var h = topPad + plotH - yTop;
+      var color = d.realizado >= d.esperado ? 'var(--good)' : 'var(--bad)';
+      svg += '<rect x="' + x + '" y="' + yTop + '" width="' + barW + '" height="' + h + '" rx="3" style="fill:' + color + '"></rect>';
+      svg += '<text x="' + (x + barW / 2) + '" y="' + (yTop - 18) + '" text-anchor="middle" font-size="11.5" font-weight="700" style="fill:var(--ink)">' + d.realizado + '</text>';
+      svg += '<text x="' + (x + barW / 2) + '" y="' + (yTop - 6) + '" text-anchor="middle" font-size="10" style="fill:var(--ink-soft)">(' + d.pct + '%)</text>';
+      // Rotated x-axis label
+      var labelY = topPad + plotH + 12;
+      svg += '<text x="' + (x + barW / 2) + '" y="' + labelY + '" text-anchor="end" font-size="10" style="fill:var(--ink-soft)" transform="rotate(-45 ' + (x + barW / 2) + ' ' + labelY + ')">' + d.periodo + '</text>';
+    });
+
+    // Legend
+    var legendY = 20;
+    svg += '<rect x="' + (svgW - 220) + '" y="' + (legendY - 12) + '" width="14" height="14" style="fill:var(--good)" rx="2"></rect>';
+    svg += '<text x="' + (svgW - 200) + '" y="' + legendY + '" font-size="11.5" style="fill:var(--ink)">Meta atingida/superada</text>';
+    svg += '<rect x="' + (svgW - 220) + '" y="' + (legendY + 10) + '" width="14" height="14" style="fill:var(--bad)" rx="2"></rect>';
+    svg += '<text x="' + (svgW - 200) + '" y="' + (legendY + 22) + '" font-size="11.5" style="fill:var(--ink)">Abaixo da meta</text>';
+
+    svg += '</svg>';
+    container.innerHTML = svg;
+  }
+
+  /* ---- Chart zoom: mouse-wheel zoom centered on the cursor, dblclick to reset ---- */
+  (function setupChartZoom() {
+    var chartContainer = document.getElementById('sec4-chart');
+    if (!chartContainer) return;
+
+    chartContainer.addEventListener('wheel', function (e) {
+      var svgEl = chartContainer.querySelector('svg');
+      if (!svgEl) return;
+      e.preventDefault();
+
+      var rect = chartContainer.getBoundingClientRect();
+      var xPct = ((e.clientX - rect.left) / rect.width) * 100;
+      var yPct = ((e.clientY - rect.top) / rect.height) * 100;
+      svgEl.style.transformOrigin = xPct + '% ' + yPct + '%';
+
+      var factor = e.deltaY < 0 ? 1.18 : (1 / 1.18);
+      chartZoom = Math.min(6, Math.max(1, chartZoom * factor));
+      svgEl.style.transform = 'scale(' + chartZoom + ')';
+      chartContainer.style.cursor = chartZoom > 1 ? 'zoom-out' : 'zoom-in';
+    }, { passive: false });
+
+    chartContainer.addEventListener('dblclick', function () {
+      var svgEl = chartContainer.querySelector('svg');
+      if (!svgEl) return;
+      chartZoom = 1;
+      svgEl.style.transform = 'scale(1)';
+      svgEl.style.transformOrigin = '50% 50%';
+      chartContainer.style.cursor = 'zoom-in';
+    });
+  })();
+
+  recalcSec4();
+
+  /* ---- Section 3: Meta Semanal x Realizado — TXT export/import ---- */
+  var metaWarning = document.getElementById('meta-txt-warning');
+
+  function metaRowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    var periodo = cells[0].textContent.trim();
+    var esperado = parseInt(cells[1].textContent, 10) || 0;
+    var realizado = parseInt(cells[2].textContent, 10) || 0;
+    return { periodo: periodo, esperado: esperado, realizado: realizado };
+  }
+
+  function buildMetaTXT() {
+    var rows = Array.prototype.slice.call(metaTbody.querySelectorAll('tr'));
+    var lines = rows.map(function (row) {
+      var d = metaRowFromCells(row);
+      return [d.periodo, d.esperado, d.realizado].join('|');
+    });
+    return lines.join('\n');
+  }
+
+  function buildMetaRowHtml(periodo, esperado, realizado) {
+    var pct = esperado > 0 ? Math.round((realizado / esperado) * 100) : 0;
+    var realizadoClass = 'realizado-cell ' + (realizado >= esperado ? 'up' : 'down');
+    return '<td>' + escapeHtml(periodo) + '</td>' +
+      '<td>' + esperado + '</td>' +
+      '<td class="' + realizadoClass + '">' + realizado + '</td>' +
+      '<td><span class="pill ' + pctClass(pct) + '">' + pct + '%</span></td>' +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover período">Remover</button></td>';
+  }
+
+  function renderMetaTable(entries) {
+    metaTbody.innerHTML = '';
+    entries.forEach(function (d) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = buildMetaRowHtml(d.periodo, d.esperado, d.realizado);
+      metaTbody.appendChild(tr);
+    });
+  }
+
+  function parseMetaTXT(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var parts = line.split('|');
+      if (parts.length < 3) { invalid++; return; }
+      var periodo = (parts[0] || '').trim();
+      var esperado = parseInt(parts[1], 10);
+      var realizado = parseInt(parts[2], 10);
+      if (!periodo || isNaN(esperado) || isNaN(realizado)) { invalid++; return; }
+      entries.push({ periodo: periodo, esperado: esperado, realizado: realizado });
+    });
+    return { entries: entries, invalid: invalid };
+  }
+
+  document.getElementById('save-meta-txt-btn').addEventListener('click', function () {
+    var txt = buildMetaTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'meta_semanal_x_realizado.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadMetaInput = document.getElementById('load-meta-txt-input');
+  document.getElementById('load-meta-txt-btn').addEventListener('click', function () {
+    loadMetaInput.value = '';
+    loadMetaInput.click();
+  });
+
+  loadMetaInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var parsed = parseMetaTXT(text);
+      if (parsed.entries.length === 0) {
+        metaWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderMetaTable(parsed.entries);
+      recalcSec4();
+      metaWarning.textContent = parsed.invalid > 0
+        ? ('Tabela atualizada. ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.')
+        : 'Tabela atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      metaWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load meta_semanal_x_realizado.txt from the same folder, if present */
+  fetch('meta_semanal_x_realizado.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var parsed = parseMetaTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderMetaTable(parsed.entries);
+      recalcSec4();
+      metaWarning.textContent = 'Tabela carregada automaticamente de meta_semanal_x_realizado.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
+    })
+    .catch(function () { /* file not found or not accessible — keep default data */ });
+
+  /* ---- Section 5: Análise, Comentários e Feedbacks ---- */
+  var analiseTbody = document.getElementById('analise-tbody');
+  var analiseWarning = document.getElementById('analise-txt-warning');
+  var newAnaliseResponsavel = document.getElementById('new-analise-responsavel');
+  var newAnaliseTipo = document.getElementById('new-analise-tipo');
+  var newAnaliseComentario = document.getElementById('new-analise-comentario');
+  var addAnaliseBtn = document.getElementById('add-analise-btn');
+  var addAnaliseWarning = document.getElementById('add-analise-warning');
+
+  MEMBERS.forEach(function (name) {
+    var opt = document.createElement('option');
+    opt.value = name;
+    opt.textContent = name;
+    newAnaliseResponsavel.appendChild(opt);
+  });
+  var optSemRespAnalise = document.createElement('option');
+  optSemRespAnalise.value = 'Sem Responsável';
+  optSemRespAnalise.textContent = 'Sem Responsável';
+  newAnaliseResponsavel.appendChild(optSemRespAnalise);
+
+  function tipoPillClass(tipo) {
+    if (tipo === 'Análise') return 'pill-warn';
+    if (tipo === 'Feedback') return 'pill-info';
+    return 'pill-good'; // Comentário
+  }
+
+  function analiseRespCellHtml(resp) {
+    var norm = resp.trim().toLowerCase();
+    if (norm.indexOf('sem responsável') === 0 || norm.indexOf('sem responsavel') === 0) {
+      return '<td class="empty">' + escapeHtml(resp.trim()) + '</td>';
+    }
+    return '<td>' + escapeHtml(resp.trim()) + '</td>';
+  }
+
+  function buildAnaliseRowHtml(responsavel, tipo, comentario) {
+    return analiseRespCellHtml(responsavel) +
+      '<td><span class="pill ' + tipoPillClass(tipo) + '">' + escapeHtml(tipo) + '</span></td>' +
+      '<td>' + escapeHtml(comentario) + '</td>' +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover">Remover</button></td>';
+  }
+
+  function analiseRowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    var responsavel = cells[0].textContent.trim();
+    var tipoEl = cells[1].querySelector('.pill');
+    var tipo = (tipoEl ? tipoEl.textContent : cells[1].textContent).trim();
+    var comentario = cells[2].textContent.trim();
+    return { responsavel: responsavel, tipo: tipo, comentario: comentario };
+  }
+
+  function renderAnaliseTable(entries) {
+    analiseTbody.innerHTML = '';
+    entries.forEach(function (d) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = buildAnaliseRowHtml(d.responsavel, d.tipo, d.comentario);
+      analiseTbody.appendChild(tr);
+    });
+  }
+
+  analiseTbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var row = btn.closest('tr');
+    if (row) row.remove();
+  });
+
+  function validateAddAnalise() {
+    var ok = newAnaliseResponsavel.value && newAnaliseTipo.value && newAnaliseComentario.value.trim().length > 0;
+    addAnaliseBtn.disabled = !ok;
+    addAnaliseWarning.textContent = '';
+  }
+  [newAnaliseResponsavel, newAnaliseTipo, newAnaliseComentario].forEach(function (el) {
+    el.addEventListener('input', validateAddAnalise);
+    el.addEventListener('change', validateAddAnalise);
+  });
+  validateAddAnalise();
+
+  addAnaliseBtn.addEventListener('click', function () {
+    var responsavel = newAnaliseResponsavel.value;
+    var tipo = newAnaliseTipo.value;
+    var comentario = newAnaliseComentario.value.trim();
+    if (!responsavel || !tipo || !comentario) {
+      addAnaliseWarning.textContent = 'Preencha Responsável, Tipo e Comentário para adicionar.';
+      return;
+    }
+    var tr = document.createElement('tr');
+    tr.innerHTML = buildAnaliseRowHtml(responsavel, tipo, comentario);
+    analiseTbody.appendChild(tr);
+
+    newAnaliseResponsavel.value = '';
+    newAnaliseTipo.value = '';
+    newAnaliseComentario.value = '';
+    validateAddAnalise();
+  });
+
+  function buildAnaliseTXT() {
+    var rows = Array.prototype.slice.call(analiseTbody.querySelectorAll('tr'));
+    var lines = rows.map(function (row) {
+      var d = analiseRowFromCells(row);
+      return [d.responsavel, d.tipo, d.comentario].join('|');
+    });
+    return lines.join('\n');
+  }
+
+  document.getElementById('save-analise-txt-btn').addEventListener('click', function () {
+    var txt = buildAnaliseTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'analise_comentarios_feedbacks.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadAnaliseInput = document.getElementById('load-analise-txt-input');
+  document.getElementById('load-analise-txt-btn').addEventListener('click', function () {
+    loadAnaliseInput.value = '';
+    loadAnaliseInput.click();
+  });
+
+  function parseAnaliseTXT(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var parts = line.split('|');
+      if (parts.length < 3) { invalid++; return; }
+      var responsavel = (parts[0] || '').trim();
+      var tipo = (parts[1] || '').trim();
+      var comentario = (parts[2] || '').trim();
+      if (!responsavel || !tipo || !comentario) { invalid++; return; }
+      entries.push({ responsavel: responsavel, tipo: tipo, comentario: comentario });
+    });
+    return { entries: entries, invalid: invalid };
+  }
+
+  loadAnaliseInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var parsed = parseAnaliseTXT(text);
+      if (parsed.entries.length === 0) {
+        analiseWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderAnaliseTable(parsed.entries);
+      analiseWarning.textContent = parsed.invalid > 0
+        ? ('Tabela atualizada. ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.')
+        : 'Tabela atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      analiseWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load analise_comentarios_feedbacks.txt from the same folder, if present */
+  fetch('analise_comentarios_feedbacks.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var parsed = parseAnaliseTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderAnaliseTable(parsed.entries);
+      analiseWarning.textContent = 'Tabela carregada automaticamente de analise_comentarios_feedbacks.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
+    })
+    .catch(function () { /* file not found or not accessible — table stays empty */ });
+
+  /* ---- Section 6: Acompanhamento ---- */
+  var acompTbody = document.getElementById('acompanhamento-tbody');
+  var acompWarning = document.getElementById('acomp-txt-warning');
+  var newAcompResponsavel = document.getElementById('new-acomp-responsavel');
+  var newAcompTicket = document.getElementById('new-acomp-ticket');
+  var newAcompComentario = document.getElementById('new-acomp-comentario');
+  var addAcompBtn = document.getElementById('add-acomp-btn');
+  var addAcompWarning = document.getElementById('add-acomp-warning');
+  var ACOMP_TICKET_BASE_URL = 'https://lbc.movidesk.com/Ticket/Edit/';
+
+  MEMBERS.forEach(function (name) {
+    var opt = document.createElement('option');
+    opt.value = name;
+    opt.textContent = name;
+    newAcompResponsavel.appendChild(opt);
+  });
+  var optSemRespAcomp = document.createElement('option');
+  optSemRespAcomp.value = 'Sem Responsável';
+  optSemRespAcomp.textContent = 'Sem Responsável';
+  newAcompResponsavel.appendChild(optSemRespAcomp);
+
+  function acompRespCellHtml(resp) {
+    var norm = resp.trim().toLowerCase();
+    if (norm.indexOf('sem responsável') === 0 || norm.indexOf('sem responsavel') === 0) {
+      return '<td class="empty">' + escapeHtml(resp.trim()) + '</td>';
+    }
+    return '<td>' + escapeHtml(resp.trim()) + '</td>';
+  }
+
+  function buildAcompRowHtml(responsavel, ticket, comentario) {
+    return acompRespCellHtml(responsavel) +
+      '<td><a class="ticket-link" href="' + ACOMP_TICKET_BASE_URL + encodeURIComponent(ticket) + '" target="_blank" rel="noopener noreferrer"><strong>' + escapeHtml(ticket) + '</strong></a></td>' +
+      '<td>' + escapeHtml(comentario) + '</td>' +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover">Remover</button></td>';
+  }
+
+  function acompRowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    var responsavel = cells[0].textContent.trim();
+    var ticketLink = cells[1].querySelector('.ticket-link');
+    var ticket = (ticketLink ? ticketLink.textContent : cells[1].textContent).trim();
+    var comentario = cells[2].textContent.trim();
+    return { responsavel: responsavel, ticket: ticket, comentario: comentario };
+  }
+
+  function renderAcompTable(entries) {
+    acompTbody.innerHTML = '';
+    entries.forEach(function (d) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = buildAcompRowHtml(d.responsavel, d.ticket, d.comentario);
+      acompTbody.appendChild(tr);
+    });
+  }
+
+  acompTbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var row = btn.closest('tr');
+    if (row) row.remove();
+  });
+
+  function validateAddAcomp() {
+    var ok = newAcompResponsavel.value && newAcompTicket.value.trim().length > 0 && newAcompComentario.value.trim().length > 0;
+    addAcompBtn.disabled = !ok;
+    addAcompWarning.textContent = '';
+  }
+  [newAcompResponsavel, newAcompTicket, newAcompComentario].forEach(function (el) {
+    el.addEventListener('input', validateAddAcomp);
+    el.addEventListener('change', validateAddAcomp);
+  });
+  validateAddAcomp();
+
+  addAcompBtn.addEventListener('click', function () {
+    var responsavel = newAcompResponsavel.value;
+    var ticket = newAcompTicket.value.trim();
+    var comentario = newAcompComentario.value.trim();
+    if (!responsavel || !ticket || !comentario) {
+      addAcompWarning.textContent = 'Preencha Responsável, Ticket e Comentário para adicionar.';
+      return;
+    }
+    var tr = document.createElement('tr');
+    tr.innerHTML = buildAcompRowHtml(responsavel, ticket, comentario);
+    acompTbody.appendChild(tr);
+
+    newAcompResponsavel.value = '';
+    newAcompTicket.value = '';
+    newAcompComentario.value = '';
+    validateAddAcomp();
+  });
+
+  function buildAcompTXT() {
+    var rows = Array.prototype.slice.call(acompTbody.querySelectorAll('tr'));
+    var lines = rows.map(function (row) {
+      var d = acompRowFromCells(row);
+      return [d.responsavel, d.ticket, d.comentario].join('|');
+    });
+    return lines.join('\n');
+  }
+
+  document.getElementById('save-acomp-txt-btn').addEventListener('click', function () {
+    var txt = buildAcompTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'acompanhamento.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadAcompInput = document.getElementById('load-acomp-txt-input');
+  document.getElementById('load-acomp-txt-btn').addEventListener('click', function () {
+    loadAcompInput.value = '';
+    loadAcompInput.click();
+  });
+
+  function parseAcompTXT(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var parts = line.split('|');
+      if (parts.length < 3) { invalid++; return; }
+      var responsavel = (parts[0] || '').trim();
+      var ticket = (parts[1] || '').trim();
+      var comentario = (parts[2] || '').trim();
+      if (!responsavel || !ticket || !comentario) { invalid++; return; }
+      entries.push({ responsavel: responsavel, ticket: ticket, comentario: comentario });
+    });
+    return { entries: entries, invalid: invalid };
+  }
+
+  loadAcompInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var parsed = parseAcompTXT(text);
+      if (parsed.entries.length === 0) {
+        acompWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderAcompTable(parsed.entries);
+      acompWarning.textContent = parsed.invalid > 0
+        ? ('Tabela atualizada. ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.')
+        : 'Tabela atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      acompWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load acompanhamento.txt from the same folder, if present */
+  fetch('acompanhamento.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var parsed = parseAcompTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderAcompTable(parsed.entries);
+      acompWarning.textContent = 'Tabela carregada automaticamente de acompanhamento.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
+    })
+    .catch(function () { /* file not found or not accessible — table stays empty */ });
+
+  /* ---- Section 7: Sugestões ---- */
+  var sugTbody = document.getElementById('sugestoes-tbody');
+  var sugWarning = document.getElementById('sug-txt-warning');
+  var newSugResponsavel = document.getElementById('new-sug-responsavel');
+  var newSugTicket = document.getElementById('new-sug-ticket');
+  var newSugTexto = document.getElementById('new-sug-texto');
+  var addSugBtn = document.getElementById('add-sug-btn');
+  var addSugWarning = document.getElementById('add-sug-warning');
+  var SUG_TICKET_BASE_URL = 'https://lbc.movidesk.com/Ticket/Edit/';
+
+  MEMBERS.forEach(function (name) {
+    var opt = document.createElement('option');
+    opt.value = name;
+    opt.textContent = name;
+    newSugResponsavel.appendChild(opt);
+  });
+  var optSemRespSug = document.createElement('option');
+  optSemRespSug.value = 'Sem Responsável';
+  optSemRespSug.textContent = 'Sem Responsável';
+  newSugResponsavel.appendChild(optSemRespSug);
+
+  function sugRespCellHtml(resp) {
+    var norm = resp.trim().toLowerCase();
+    if (norm.indexOf('sem responsável') === 0 || norm.indexOf('sem responsavel') === 0) {
+      return '<td class="empty">' + escapeHtml(resp.trim()) + '</td>';
+    }
+    return '<td>' + escapeHtml(resp.trim()) + '</td>';
+  }
+
+  function sugTicketCellHtml(ticket) {
+    if (ticket) {
+      return '<td><a class="ticket-link" href="' + SUG_TICKET_BASE_URL + encodeURIComponent(ticket) + '" target="_blank" rel="noopener noreferrer"><strong>' + escapeHtml(ticket) + '</strong></a></td>';
+    }
+    return '<td><span class="empty">—</span></td>';
+  }
+
+  function buildSugRowHtml(responsavel, ticket, sugestao) {
+    return sugRespCellHtml(responsavel) +
+      sugTicketCellHtml(ticket) +
+      '<td>' + escapeHtml(sugestao) + '</td>' +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover">Remover</button></td>';
+  }
+
+  function sugRowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    var responsavel = cells[0].textContent.trim();
+    var ticketLink = cells[1].querySelector('.ticket-link');
+    var ticketEmpty = cells[1].querySelector('.empty');
+    var ticket = ticketLink ? ticketLink.textContent.trim() : (ticketEmpty ? '' : cells[1].textContent.trim());
+    var sugestao = cells[2].textContent.trim();
+    return { responsavel: responsavel, ticket: ticket, sugestao: sugestao };
+  }
+
+  function renderSugTable(entries) {
+    sugTbody.innerHTML = '';
+    entries.forEach(function (d) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = buildSugRowHtml(d.responsavel, d.ticket, d.sugestao);
+      sugTbody.appendChild(tr);
+    });
+  }
+
+  sugTbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var row = btn.closest('tr');
+    if (row) row.remove();
+  });
+
+  function validateAddSug() {
+    var ok = newSugResponsavel.value && newSugTexto.value.trim().length > 0;
+    addSugBtn.disabled = !ok;
+    addSugWarning.textContent = '';
+  }
+  [newSugResponsavel, newSugTicket, newSugTexto].forEach(function (el) {
+    el.addEventListener('input', validateAddSug);
+    el.addEventListener('change', validateAddSug);
+  });
+  validateAddSug();
+
+  addSugBtn.addEventListener('click', function () {
+    var responsavel = newSugResponsavel.value;
+    var ticket = newSugTicket.value.trim();
+    var sugestao = newSugTexto.value.trim();
+    if (!responsavel || !sugestao) {
+      addSugWarning.textContent = 'Preencha Responsável e Sugestão para adicionar. Ticket é opcional.';
+      return;
+    }
+    var tr = document.createElement('tr');
+    tr.innerHTML = buildSugRowHtml(responsavel, ticket, sugestao);
+    sugTbody.appendChild(tr);
+
+    newSugResponsavel.value = '';
+    newSugTicket.value = '';
+    newSugTexto.value = '';
+    validateAddSug();
+  });
+
+  function buildSugTXT() {
+    var rows = Array.prototype.slice.call(sugTbody.querySelectorAll('tr'));
+    var lines = rows.map(function (row) {
+      var d = sugRowFromCells(row);
+      return [d.responsavel, d.ticket, d.sugestao].join('|');
+    });
+    return lines.join('\n');
+  }
+
+  document.getElementById('save-sug-txt-btn').addEventListener('click', function () {
+    var txt = buildSugTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'sugestoes.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadSugInput = document.getElementById('load-sug-txt-input');
+  document.getElementById('load-sug-txt-btn').addEventListener('click', function () {
+    loadSugInput.value = '';
+    loadSugInput.click();
+  });
+
+  function parseSugTXT(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var parts = line.split('|');
+      if (parts.length < 3) { invalid++; return; }
+      var responsavel = (parts[0] || '').trim();
+      var ticket = (parts[1] || '').trim();
+      var sugestao = (parts[2] || '').trim();
+      if (!responsavel || !sugestao) { invalid++; return; }
+      entries.push({ responsavel: responsavel, ticket: ticket, sugestao: sugestao });
+    });
+    return { entries: entries, invalid: invalid };
+  }
+
+  loadSugInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var parsed = parseSugTXT(text);
+      if (parsed.entries.length === 0) {
+        sugWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderSugTable(parsed.entries);
+      sugWarning.textContent = parsed.invalid > 0
+        ? ('Tabela atualizada. ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.')
+        : 'Tabela atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      sugWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load sugestoes.txt from the same folder, if present */
+  fetch('sugestoes.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var parsed = parseSugTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderSugTable(parsed.entries);
+      sugWarning.textContent = 'Tabela carregada automaticamente de sugestoes.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
+    })
+    .catch(function () { /* file not found or not accessible — table stays empty */ });
+
+  /* ---- Section 8: Tickets — Análise Conjunta N3 ---- */
+  var conjuntaTbody = document.getElementById('conjunta-tbody');
+  var conjuntaWarning = document.getElementById('conjunta-txt-warning');
+  var newConjuntaResponsavel = document.getElementById('new-conjunta-responsavel');
+  var newConjuntaTicket = document.getElementById('new-conjunta-ticket');
+  var addConjuntaBtn = document.getElementById('add-conjunta-btn');
+  var addConjuntaWarning = document.getElementById('add-conjunta-warning');
+  var CONJUNTA_TICKET_BASE_URL = 'https://lbc.movidesk.com/Ticket/Edit/';
+
+  MEMBERS.forEach(function (name) {
+    var opt = document.createElement('option');
+    opt.value = name;
+    opt.textContent = name;
+    newConjuntaResponsavel.appendChild(opt);
+  });
+  var optSemRespConjunta = document.createElement('option');
+  optSemRespConjunta.value = 'Sem Responsável';
+  optSemRespConjunta.textContent = 'Sem Responsável';
+  newConjuntaResponsavel.appendChild(optSemRespConjunta);
+
+  function conjuntaRespCellHtml(resp) {
+    var norm = resp.trim().toLowerCase();
+    if (norm.indexOf('sem responsável') === 0 || norm.indexOf('sem responsavel') === 0) {
+      return '<td class="empty">' + escapeHtml(resp.trim()) + '</td>';
+    }
+    return '<td>' + escapeHtml(resp.trim()) + '</td>';
+  }
+
+  function conjuntaTicketCellHtml(ticketRaw) {
+    var tickets = (ticketRaw || '').split('/').map(function (t) { return t.trim(); }).filter(Boolean);
+    if (tickets.length === 0) {
+      return '<td><span class="empty">—</span></td>';
+    }
+    var links = tickets.map(function (t) {
+      return '<a class="ticket-link" href="' + CONJUNTA_TICKET_BASE_URL + encodeURIComponent(t) + '" target="_blank" rel="noopener noreferrer"><strong>' + escapeHtml(t) + '</strong></a>';
+    });
+    return '<td>' + links.join(' / ') + '</td>';
+  }
+
+  function buildConjuntaRowHtml(responsavel, ticketRaw) {
+    return conjuntaRespCellHtml(responsavel) +
+      conjuntaTicketCellHtml(ticketRaw) +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover">Remover</button></td>';
+  }
+
+  function conjuntaRowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    var responsavel = cells[0].textContent.trim();
+    var ticketLinks = cells[1].querySelectorAll('.ticket-link');
+    var ticket = Array.prototype.map.call(ticketLinks, function (a) { return a.textContent.trim(); }).join(' / ');
+    return { responsavel: responsavel, ticket: ticket };
+  }
+
+  function renderConjuntaTable(entries) {
+    conjuntaTbody.innerHTML = '';
+    entries.forEach(function (d) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = buildConjuntaRowHtml(d.responsavel, d.ticket);
+      conjuntaTbody.appendChild(tr);
+    });
+  }
+
+  conjuntaTbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var row = btn.closest('tr');
+    if (row) row.remove();
+  });
+
+  function validateAddConjunta() {
+    var ok = !!newConjuntaResponsavel.value;
+    addConjuntaBtn.disabled = !ok;
+    addConjuntaWarning.textContent = '';
+  }
+  [newConjuntaResponsavel, newConjuntaTicket].forEach(function (el) {
+    el.addEventListener('input', validateAddConjunta);
+    el.addEventListener('change', validateAddConjunta);
+  });
+  validateAddConjunta();
+
+  addConjuntaBtn.addEventListener('click', function () {
+    var responsavel = newConjuntaResponsavel.value;
+    var ticket = newConjuntaTicket.value.trim();
+    if (!responsavel) {
+      addConjuntaWarning.textContent = 'Selecione o Responsável para adicionar. Ticket é opcional.';
+      return;
+    }
+    var tr = document.createElement('tr');
+    tr.innerHTML = buildConjuntaRowHtml(responsavel, ticket);
+    conjuntaTbody.appendChild(tr);
+
+    newConjuntaResponsavel.value = '';
+    newConjuntaTicket.value = '';
+    validateAddConjunta();
+  });
+
+  function buildConjuntaTXT() {
+    var rows = Array.prototype.slice.call(conjuntaTbody.querySelectorAll('tr'));
+    var lines = rows.map(function (row) {
+      var d = conjuntaRowFromCells(row);
+      return [d.responsavel, d.ticket].join('|');
+    });
+    return lines.join('\n');
+  }
+
+  document.getElementById('save-conjunta-txt-btn').addEventListener('click', function () {
+    var txt = buildConjuntaTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'tickets_analise_conjunta_n3.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadConjuntaInput = document.getElementById('load-conjunta-txt-input');
+  document.getElementById('load-conjunta-txt-btn').addEventListener('click', function () {
+    loadConjuntaInput.value = '';
+    loadConjuntaInput.click();
+  });
+
+  function parseConjuntaTXT(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var parts = line.split('|');
+      if (parts.length < 1) { invalid++; return; }
+      var responsavel = (parts[0] || '').trim();
+      var ticket = (parts[1] || '').trim();
+      if (!responsavel) { invalid++; return; }
+      entries.push({ responsavel: responsavel, ticket: ticket });
+    });
+    return { entries: entries, invalid: invalid };
+  }
+
+  loadConjuntaInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var parsed = parseConjuntaTXT(text);
+      if (parsed.entries.length === 0) {
+        conjuntaWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderConjuntaTable(parsed.entries);
+      conjuntaWarning.textContent = parsed.invalid > 0
+        ? ('Tabela atualizada. ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.')
+        : 'Tabela atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      conjuntaWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load tickets_analise_conjunta_n3.txt from the same folder, if present */
+  fetch('tickets_analise_conjunta_n3.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var parsed = parseConjuntaTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderConjuntaTable(parsed.entries);
+      conjuntaWarning.textContent = 'Tabela carregada automaticamente de tickets_analise_conjunta_n3.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
+    })
+    .catch(function () { /* file not found or not accessible — table stays empty */ });
+
+  /* ---- Section 9: Avisos ---- */
+  var avisosList = document.getElementById('avisos-list');
+  var avisoWarning = document.getElementById('aviso-txt-warning');
+  var newAvisoTexto = document.getElementById('new-aviso-texto');
+  var addAvisoBtn = document.getElementById('add-aviso-btn');
+  var addAvisoWarning = document.getElementById('add-aviso-warning');
+
+  function buildAvisoLiHtml(texto) {
+    return '<span class="notice-text">' + escapeHtml(texto) + '</span>' +
+      '<button type="button" class="remove-row-btn notice-remove-btn" title="Remover aviso">Remover</button>';
+  }
+
+  function renderAvisosList(entries) {
+    avisosList.innerHTML = '';
+    entries.forEach(function (texto) {
+      var li = document.createElement('li');
+      li.innerHTML = buildAvisoLiHtml(texto);
+      avisosList.appendChild(li);
+    });
+  }
+
+  avisosList.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var li = btn.closest('li');
+    if (li) li.remove();
+  });
+
+  function validateAddAviso() {
+    addAvisoBtn.disabled = newAvisoTexto.value.trim().length === 0;
+    addAvisoWarning.textContent = '';
+  }
+  newAvisoTexto.addEventListener('input', validateAddAviso);
+  validateAddAviso();
+
+  addAvisoBtn.addEventListener('click', function () {
+    var texto = newAvisoTexto.value.trim();
+    if (!texto) {
+      addAvisoWarning.textContent = 'Digite o texto do aviso para adicionar.';
+      return;
+    }
+    var li = document.createElement('li');
+    li.innerHTML = buildAvisoLiHtml(texto);
+    avisosList.appendChild(li);
+
+    newAvisoTexto.value = '';
+    validateAddAviso();
+  });
+
+  function buildAvisosTXT() {
+    var items = Array.prototype.slice.call(avisosList.querySelectorAll('li'));
+    var lines = items.map(function (li) {
+      var textEl = li.querySelector('.notice-text');
+      return (textEl ? textEl.textContent : li.textContent).trim();
+    });
+    return lines.join('\n');
+  }
+
+  document.getElementById('save-aviso-txt-btn').addEventListener('click', function () {
+    var txt = buildAvisosTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'avisos.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadAvisoInput = document.getElementById('load-aviso-txt-input');
+  document.getElementById('load-aviso-txt-btn').addEventListener('click', function () {
+    loadAvisoInput.value = '';
+    loadAvisoInput.click();
+  });
+
+  function parseAvisosTXT(text) {
+    return text.split(/\r?\n/).map(function (l) { return l.trim(); }).filter(function (l) { return l.length > 0; });
+  }
+
+  loadAvisoInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var lines = parseAvisosTXT(text);
+      if (lines.length === 0) {
+        avisoWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderAvisosList(lines);
+      avisoWarning.textContent = 'Lista de avisos atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      avisoWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load avisos.txt from the same folder, if present */
+  fetch('avisos.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var lines = parseAvisosTXT(text);
+      if (lines.length === 0) return;
+      renderAvisosList(lines);
+      avisoWarning.textContent = 'Lista carregada automaticamente de avisos.txt.';
+    })
+    .catch(function () { /* file not found or not accessible — list stays empty */ });
+
+  /* ---- Section 10: Impactos / Acontecimentos da Semana ---- */
+  var impactosTbody = document.getElementById('impactos-tbody');
+  var impactoWarning = document.getElementById('impacto-txt-warning');
+  var newImpactoSemana = document.getElementById('new-impacto-semana');
+  var newImpactoInfo = document.getElementById('new-impacto-info');
+  var addImpactoBtn = document.getElementById('add-impacto-btn');
+  var addImpactoWarning = document.getElementById('add-impacto-warning');
+
+  function buildImpactoRowHtml(semana, info) {
+    return '<td>' + escapeHtml(semana) + '</td>' +
+      '<td>' + escapeHtml(info) + '</td>' +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover">Remover</button></td>';
+  }
+
+  function impactoRowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    return { semana: cells[0].textContent.trim(), info: cells[1].textContent.trim() };
+  }
+
+  function renderImpactosTable(entries) {
+    impactosTbody.innerHTML = '';
+    entries.forEach(function (d) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = buildImpactoRowHtml(d.semana, d.info);
+      impactosTbody.appendChild(tr);
+    });
+  }
+
+  impactosTbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var row = btn.closest('tr');
+    if (row) row.remove();
+  });
+
+  function validateAddImpacto() {
+    var ok = newImpactoSemana.value.trim().length > 0 && newImpactoInfo.value.trim().length > 0;
+    addImpactoBtn.disabled = !ok;
+    addImpactoWarning.textContent = '';
+  }
+  [newImpactoSemana, newImpactoInfo].forEach(function (el) {
+    el.addEventListener('input', validateAddImpacto);
+  });
+  validateAddImpacto();
+
+  addImpactoBtn.addEventListener('click', function () {
+    var semana = newImpactoSemana.value.trim();
+    var info = newImpactoInfo.value.trim();
+    if (!semana || !info) {
+      addImpactoWarning.textContent = 'Preencha Semana e Informação para adicionar.';
+      return;
+    }
+    var tr = document.createElement('tr');
+    tr.innerHTML = buildImpactoRowHtml(semana, info);
+    impactosTbody.appendChild(tr);
+
+    newImpactoSemana.value = '';
+    newImpactoInfo.value = '';
+    validateAddImpacto();
+  });
+
+  function buildImpactosTXT() {
+    var rows = Array.prototype.slice.call(impactosTbody.querySelectorAll('tr'));
+    var lines = rows.map(function (row) {
+      var d = impactoRowFromCells(row);
+      return [d.semana, d.info].join('|');
+    });
+    return lines.join('\n');
+  }
+
+  document.getElementById('save-impacto-txt-btn').addEventListener('click', function () {
+    var txt = buildImpactosTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'impactos_acontecimentos_semana.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadImpactoInput = document.getElementById('load-impacto-txt-input');
+  document.getElementById('load-impacto-txt-btn').addEventListener('click', function () {
+    loadImpactoInput.value = '';
+    loadImpactoInput.click();
+  });
+
+  function parseImpactosTXT(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var parts = line.split('|');
+      if (parts.length < 2) { invalid++; return; }
+      var semana = (parts[0] || '').trim();
+      var info = (parts[1] || '').trim();
+      if (!semana || !info) { invalid++; return; }
+      entries.push({ semana: semana, info: info });
+    });
+    return { entries: entries, invalid: invalid };
+  }
+
+  loadImpactoInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var parsed = parseImpactosTXT(text);
+      if (parsed.entries.length === 0) {
+        impactoWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderImpactosTable(parsed.entries);
+      impactoWarning.textContent = parsed.invalid > 0
+        ? ('Tabela atualizada. ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.')
+        : 'Tabela atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      impactoWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load impactos_acontecimentos_semana.txt from the same folder, if present */
+  fetch('impactos_acontecimentos_semana.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var parsed = parseImpactosTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderImpactosTable(parsed.entries);
+      impactoWarning.textContent = 'Tabela carregada automaticamente de impactos_acontecimentos_semana.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
+    })
+    .catch(function () { /* file not found or not accessible — table stays empty */ });
+
+  /* ---- Section 11: BDFix — Recentes ---- */
+  var bdfixTbody = document.getElementById('bdfix-tbody');
+  var bdfixWarning = document.getElementById('bdfix-txt-warning');
+  var newBdfixTicket = document.getElementById('new-bdfix-ticket');
+  var newBdfixTitulo = document.getElementById('new-bdfix-titulo');
+  var newBdfixLocal = document.getElementById('new-bdfix-local');
+  var addBdfixBtn = document.getElementById('add-bdfix-btn');
+  var addBdfixWarning = document.getElementById('add-bdfix-warning');
+  var BDFIX_TICKET_BASE_URL = 'https://lbc.movidesk.com/Ticket/Edit/';
+
+  function buildBdfixRowHtml(ticket, titulo, local) {
+    return '<td><a class="ticket-link" href="' + BDFIX_TICKET_BASE_URL + encodeURIComponent(ticket) + '" target="_blank" rel="noopener noreferrer"><strong>' + escapeHtml(ticket) + '</strong></a></td>' +
+      '<td>' + escapeHtml(titulo) + '</td>' +
+      '<td>' + escapeHtml(local) + '</td>' +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover">Remover</button></td>';
+  }
+
+  function bdfixRowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    var ticketLink = cells[0].querySelector('.ticket-link');
+    var ticket = (ticketLink ? ticketLink.textContent : cells[0].textContent).trim();
+    var titulo = cells[1].textContent.trim();
+    var local = cells[2].textContent.trim();
+    return { ticket: ticket, titulo: titulo, local: local };
+  }
+
+  function renderBdfixTable(entries) {
+    bdfixTbody.innerHTML = '';
+    entries.forEach(function (d) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = buildBdfixRowHtml(d.ticket, d.titulo, d.local);
+      bdfixTbody.appendChild(tr);
+    });
+  }
+
+  bdfixTbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var row = btn.closest('tr');
+    if (row) row.remove();
+  });
+
+  function validateAddBdfix() {
+    var ok = newBdfixTicket.value.trim().length > 0 && newBdfixTitulo.value.trim().length > 0 && newBdfixLocal.value;
+    addBdfixBtn.disabled = !ok;
+    addBdfixWarning.textContent = '';
+  }
+  [newBdfixTicket, newBdfixTitulo, newBdfixLocal].forEach(function (el) {
+    el.addEventListener('input', validateAddBdfix);
+    el.addEventListener('change', validateAddBdfix);
+  });
+  validateAddBdfix();
+
+  addBdfixBtn.addEventListener('click', function () {
+    var ticket = newBdfixTicket.value.trim();
+    var titulo = newBdfixTitulo.value.trim();
+    var local = newBdfixLocal.value;
+    if (!ticket || !titulo || !local) {
+      addBdfixWarning.textContent = 'Preencha Ticket, Título e Local para adicionar.';
+      return;
+    }
+    var tr = document.createElement('tr');
+    tr.innerHTML = buildBdfixRowHtml(ticket, titulo, local);
+    bdfixTbody.appendChild(tr);
+
+    newBdfixTicket.value = '';
+    newBdfixTitulo.value = '';
+    newBdfixLocal.value = '';
+    validateAddBdfix();
+  });
+
+  function buildBdfixTXT() {
+    var rows = Array.prototype.slice.call(bdfixTbody.querySelectorAll('tr'));
+    var lines = rows.map(function (row) {
+      var d = bdfixRowFromCells(row);
+      return [d.ticket, d.titulo, d.local].join('|');
+    });
+    return lines.join('\n');
+  }
+
+  document.getElementById('save-bdfix-txt-btn').addEventListener('click', function () {
+    var txt = buildBdfixTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'bdfix_recentes.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadBdfixInput = document.getElementById('load-bdfix-txt-input');
+  document.getElementById('load-bdfix-txt-btn').addEventListener('click', function () {
+    loadBdfixInput.value = '';
+    loadBdfixInput.click();
+  });
+
+  function parseBdfixTXT(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var parts = line.split('|');
+      if (parts.length < 3) { invalid++; return; }
+      var ticket = (parts[0] || '').trim();
+      var titulo = (parts[1] || '').trim();
+      var local = (parts[2] || '').trim();
+      if (!ticket || !titulo || !local) { invalid++; return; }
+      entries.push({ ticket: ticket, titulo: titulo, local: local });
+    });
+    return { entries: entries, invalid: invalid };
+  }
+
+  loadBdfixInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var parsed = parseBdfixTXT(text);
+      if (parsed.entries.length === 0) {
+        bdfixWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderBdfixTable(parsed.entries);
+      bdfixWarning.textContent = parsed.invalid > 0
+        ? ('Tabela atualizada. ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.')
+        : 'Tabela atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      bdfixWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load bdfix_recentes.txt from the same folder, if present */
+  fetch('bdfix_recentes.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var parsed = parseBdfixTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderBdfixTable(parsed.entries);
+      bdfixWarning.textContent = 'Tabela carregada automaticamente de bdfix_recentes.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
+    })
+    .catch(function () { /* file not found or not accessible — table stays empty */ });
+
+  /* ---- Section 12: Bugs Recentes ---- */
+  var bugsTbody = document.getElementById('bugs-tbody');
+  var bugWarning = document.getElementById('bug-txt-warning');
+  var newBugTicket = document.getElementById('new-bug-ticket');
+  var newBugTitulo = document.getElementById('new-bug-titulo');
+  var newBugDescricao = document.getElementById('new-bug-descricao');
+  var newBugSolucao = document.getElementById('new-bug-solucao');
+  var addBugBtn = document.getElementById('add-bug-btn');
+  var addBugWarning = document.getElementById('add-bug-warning');
+  var BUG_TICKET_BASE_URL = 'https://lbc.movidesk.com/Ticket/Edit/';
+
+  function buildBugRowHtml(ticket, titulo, descricao, solucao) {
+    return '<td><a class="ticket-link" href="' + BUG_TICKET_BASE_URL + encodeURIComponent(ticket) + '" target="_blank" rel="noopener noreferrer"><strong>' + escapeHtml(ticket) + '</strong></a></td>' +
+      '<td>' + escapeHtml(titulo) + '</td>' +
+      '<td>' + escapeHtml(descricao) + '</td>' +
+      '<td>' + escapeHtml(solucao) + '</td>' +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover">Remover</button></td>';
+  }
+
+  function bugRowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    var ticketLink = cells[0].querySelector('.ticket-link');
+    var ticket = (ticketLink ? ticketLink.textContent : cells[0].textContent).trim();
+    var titulo = cells[1].textContent.trim();
+    var descricao = cells[2].textContent.trim();
+    var solucao = cells[3].textContent.trim();
+    return { ticket: ticket, titulo: titulo, descricao: descricao, solucao: solucao };
+  }
+
+  function renderBugsTable(entries) {
+    bugsTbody.innerHTML = '';
+    entries.forEach(function (d) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = buildBugRowHtml(d.ticket, d.titulo, d.descricao, d.solucao);
+      bugsTbody.appendChild(tr);
+    });
+  }
+
+  bugsTbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var row = btn.closest('tr');
+    if (row) row.remove();
+  });
+
+  function validateAddBug() {
+    var ok = newBugTicket.value.trim().length > 0 &&
+      newBugTitulo.value.trim().length > 0 &&
+      newBugDescricao.value.trim().length > 0 &&
+      newBugSolucao.value.trim().length > 0;
+    addBugBtn.disabled = !ok;
+    addBugWarning.textContent = '';
+  }
+  [newBugTicket, newBugTitulo, newBugDescricao, newBugSolucao].forEach(function (el) {
+    el.addEventListener('input', validateAddBug);
+  });
+  validateAddBug();
+
+  addBugBtn.addEventListener('click', function () {
+    var ticket = newBugTicket.value.trim();
+    var titulo = newBugTitulo.value.trim();
+    var descricao = newBugDescricao.value.trim();
+    var solucao = newBugSolucao.value.trim();
+    if (!ticket || !titulo || !descricao || !solucao) {
+      addBugWarning.textContent = 'Preencha Ticket, Título/Módulo, Descrição e Solução para adicionar.';
+      return;
+    }
+    var tr = document.createElement('tr');
+    tr.innerHTML = buildBugRowHtml(ticket, titulo, descricao, solucao);
+    bugsTbody.appendChild(tr);
+
+    newBugTicket.value = '';
+    newBugTitulo.value = '';
+    newBugDescricao.value = '';
+    newBugSolucao.value = '';
+    validateAddBug();
+  });
+
+  function buildBugsTXT() {
+    var rows = Array.prototype.slice.call(bugsTbody.querySelectorAll('tr'));
+    var lines = rows.map(function (row) {
+      var d = bugRowFromCells(row);
+      return [d.ticket, d.titulo, d.descricao, d.solucao].join('|');
+    });
+    return lines.join('\n');
+  }
+
+  document.getElementById('save-bug-txt-btn').addEventListener('click', function () {
+    var txt = buildBugsTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'bugs_recentes.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadBugInput = document.getElementById('load-bug-txt-input');
+  document.getElementById('load-bug-txt-btn').addEventListener('click', function () {
+    loadBugInput.value = '';
+    loadBugInput.click();
+  });
+
+  function parseBugsTXT(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var parts = line.split('|');
+      if (parts.length < 4) { invalid++; return; }
+      var ticket = (parts[0] || '').trim();
+      var titulo = (parts[1] || '').trim();
+      var descricao = (parts[2] || '').trim();
+      var solucao = (parts[3] || '').trim();
+      if (!ticket || !titulo || !descricao || !solucao) { invalid++; return; }
+      entries.push({ ticket: ticket, titulo: titulo, descricao: descricao, solucao: solucao });
+    });
+    return { entries: entries, invalid: invalid };
+  }
+
+  loadBugInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var parsed = parseBugsTXT(text);
+      if (parsed.entries.length === 0) {
+        bugWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderBugsTable(parsed.entries);
+      bugWarning.textContent = parsed.invalid > 0
+        ? ('Tabela atualizada. ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.')
+        : 'Tabela atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      bugWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load bugs_recentes.txt from the same folder, if present */
+  fetch('bugs_recentes.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var parsed = parseBugsTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderBugsTable(parsed.entries);
+      bugWarning.textContent = 'Tabela carregada automaticamente de bugs_recentes.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
+    })
+    .catch(function () { /* file not found or not accessible — table stays empty */ });
+
+  /* ---- Section 2: Tickets Prioritários — TXT export/import ---- */
+  var ticketsTbody = document.getElementById('tickets-tbody');
+  var ticketsWarning = document.getElementById('tickets-txt-warning');
+  var TICKET_BASE_URL = 'https://lbc.movidesk.com/Ticket/Edit/';
+
+  function escapeHtml(s) {
+    var div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
+  function respCellHtml(resp) {
+    var norm = resp.trim().toLowerCase();
+    if (norm.indexOf('sem responsável') === 0 || norm.indexOf('sem responsavel') === 0) {
+      return '<span class="pill pill-bad">' + escapeHtml(resp.trim()) + '</span>';
+    }
+    return escapeHtml(resp.trim());
+  }
+
+  function rowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    var ticketLink = cells[0].querySelector('.ticket-link');
+    var ticket = (ticketLink ? ticketLink.textContent : cells[0].textContent).trim();
+    var rede = cells[1].textContent.trim();
+    var responsavelEl = cells[2].querySelector('.pill');
+    var responsavel = (responsavelEl ? responsavelEl.textContent : cells[2].textContent).trim();
+    var motivo = cells[3].textContent.trim();
+    var checkpointEl = cells[4].querySelector('.empty');
+    var checkpoint = checkpointEl ? '' : cells[4].textContent.trim();
+    return { ticket: ticket, rede: rede, responsavel: responsavel, motivo: motivo, checkpoint: checkpoint };
+  }
+
+  function buildTicketsTXT() {
+    var rows = Array.prototype.slice.call(ticketsTbody.querySelectorAll('tr'));
+    var lines = rows.map(function (row) {
+      var d = rowFromCells(row);
+      return [d.ticket, d.rede, d.responsavel, d.motivo, d.checkpoint].join('|');
+    });
+    return lines.join('\n');
+  }
+
+  function renderTicketsTable(entries) {
+    ticketsTbody.innerHTML = '';
+    entries.forEach(function (d) {
+      var tr = document.createElement('tr');
+      var checkpointHtml = d.checkpoint ? escapeHtml(d.checkpoint) : '<span class="empty">—</span>';
+      tr.innerHTML =
+        '<td><a class="ticket-link" href="' + TICKET_BASE_URL + encodeURIComponent(d.ticket) + '" target="_blank" rel="noopener noreferrer"><strong>' + escapeHtml(d.ticket) + '</strong></a></td>' +
+        '<td>' + escapeHtml(d.rede) + '</td>' +
+        '<td class="resp-cell">' + respCellHtml(d.responsavel) + '</td>' +
+        '<td>' + escapeHtml(d.motivo) + '</td>' +
+        '<td>' + checkpointHtml + '</td>' +
+        '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover ticket">Remover</button></td>';
+      ticketsTbody.appendChild(tr);
+    });
+  }
+
+  var ticketsSortState = { column: 2, asc: true }; // default: Responsável, ascending
+
+  function getTicketCellSortValue(row, colIndex) {
+    var cells = row.querySelectorAll('td');
+    var cell = cells[colIndex];
+    if (!cell) return '';
+    if (colIndex === 0) {
+      var link = cell.querySelector('.ticket-link');
+      return (link ? link.textContent : cell.textContent).trim().toLowerCase();
+    }
+    if (colIndex === 4) {
+      var emptyEl = cell.querySelector('.empty');
+      return emptyEl ? '' : cell.textContent.trim().toLowerCase();
+    }
+    var pill = cell.querySelector('.pill');
+    return (pill ? pill.textContent : cell.textContent).trim().toLowerCase();
+  }
+
+  function updateTicketsSortIndicators() {
+    var ths = document.querySelectorAll('#tickets-thead-row th.sortable-th');
+    ths.forEach(function (th) {
+      th.classList.remove('sort-asc', 'sort-desc');
+      if (parseInt(th.getAttribute('data-sort-col'), 10) === ticketsSortState.column) {
+        th.classList.add(ticketsSortState.asc ? 'sort-asc' : 'sort-desc');
+      }
+    });
+  }
+
+  function isSemResponsavelValue(v) {
+    var s = String(v).trim().toLowerCase();
+    return s.indexOf('sem responsável') === 0 || s.indexOf('sem responsavel') === 0;
+  }
+
+  function sortTicketsRows() {
+    var colIndex = ticketsSortState.column;
+    var asc = ticketsSortState.asc;
+    var rows = Array.prototype.slice.call(ticketsTbody.querySelectorAll('tr'));
+    rows.sort(function (a, b) {
+      var va = getTicketCellSortValue(a, colIndex);
+      var vb = getTicketCellSortValue(b, colIndex);
+
+      if (colIndex === 2) {
+        var aSem = isSemResponsavelValue(va);
+        var bSem = isSemResponsavelValue(vb);
+        if (aSem && !bSem) return 1;
+        if (bSem && !aSem) return -1;
+        if (aSem && bSem) return 0;
+      }
+
+      var cmp;
+      if (typeof va === 'number' && typeof vb === 'number') {
+        cmp = va - vb;
+      } else {
+        cmp = String(va).localeCompare(String(vb), 'pt-BR', { numeric: true, sensitivity: 'base' });
+      }
+      return asc ? cmp : -cmp;
+    });
+    rows.forEach(function (row) { ticketsTbody.appendChild(row); });
+    updateTicketsSortIndicators();
+  }
+
+  document.querySelectorAll('#tickets-thead-row th.sortable-th').forEach(function (th) {
+    th.addEventListener('dblclick', function () {
+      var col = parseInt(th.getAttribute('data-sort-col'), 10);
+      if (ticketsSortState.column === col) {
+        ticketsSortState.asc = !ticketsSortState.asc;
+      } else {
+        ticketsSortState.column = col;
+        ticketsSortState.asc = true;
+      }
+      sortTicketsRows();
+    });
+  });
+
+  sortTicketsRows();
+
+  /* Remove a ticket row (works for both pre-loaded and newly added rows) */
+  ticketsTbody.addEventListener('click', function (e) {
+    var btn = e.target.closest('.remove-row-btn');
+    if (!btn) return;
+    var row = btn.closest('tr');
+    if (row) row.remove();
+  });
+
+  /* Click-to-edit Responsável cell */
+  var RESP_OPTIONS_SORTED = MEMBERS.slice().sort(function (a, b) {
+    return a.localeCompare(b, 'pt-BR', { sensitivity: 'base' });
+  }).concat(['Sem Responsável']);
+
+  ticketsTbody.addEventListener('click', function (e) {
+    if (e.target.closest('.remove-row-btn')) return;
+    var cell = e.target.closest('td.resp-cell');
+    if (!cell) return;
+    if (cell.querySelector('select')) return; // already editing
+
+    var currentEl = cell.querySelector('.pill');
+    var current = (currentEl ? currentEl.textContent : cell.textContent).trim();
+
+    var select = document.createElement('select');
+    select.className = 'resp-edit-select';
+    var blankOpt = document.createElement('option');
+    blankOpt.value = '';
+    blankOpt.textContent = 'Selecione…';
+    select.appendChild(blankOpt);
+    RESP_OPTIONS_SORTED.forEach(function (name) {
+      var opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = name;
+      select.appendChild(opt);
+    });
+    if (RESP_OPTIONS_SORTED.indexOf(current) !== -1) {
+      select.value = current;
+    }
+
+    cell.innerHTML = '';
+    cell.appendChild(select);
+    select.focus();
+
+    function cleanup() {
+      select.removeEventListener('change', onChange);
+      select.removeEventListener('blur', onBlur);
+    }
+    function onChange() {
+      var newVal = select.value || current;
+      cell.innerHTML = respCellHtml(newVal);
+      cleanup();
+      sortTicketsRows();
+    }
+    function onBlur() {
+      setTimeout(function () {
+        if (cell.contains(select)) {
+          cell.innerHTML = respCellHtml(current);
+          cleanup();
+        }
+      }, 0);
+    }
+    select.addEventListener('change', onChange);
+    select.addEventListener('blur', onBlur);
+  });
+
+  document.getElementById('save-tickets-txt-btn').addEventListener('click', function () {
+    var txt = buildTicketsTXT();
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'tickets_prioritarios_semana.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  var loadTicketsInput = document.getElementById('load-tickets-txt-input');
+  document.getElementById('load-tickets-txt-btn').addEventListener('click', function () {
+    loadTicketsInput.value = '';
+    loadTicketsInput.click();
+  });
+
+  function parseTicketsTXT(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim().length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var parts = line.split('|');
+      if (parts.length < 4) { invalid++; return; }
+      entries.push({
+        ticket: (parts[0] || '').trim(),
+        rede: (parts[1] || '').trim(),
+        responsavel: (parts[2] || '').trim(),
+        motivo: (parts[3] || '').trim(),
+        checkpoint: (parts[4] || '').trim()
+      });
+    });
+    return { entries: entries, invalid: invalid };
+  }
+
+  loadTicketsInput.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var text = String(ev.target.result || '');
+      var parsed = parseTicketsTXT(text);
+      if (parsed.entries.length === 0) {
+        ticketsWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
+        return;
+      }
+      renderTicketsTable(parsed.entries);
+      sortTicketsRows();
+      ticketsWarning.textContent = parsed.invalid > 0
+        ? ('Tabela atualizada. ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.')
+        : 'Tabela atualizada a partir do arquivo TXT.';
+    };
+    reader.onerror = function () {
+      ticketsWarning.textContent = 'Erro ao ler o arquivo TXT.';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  /* Auto-load tickets_prioritarios_semana.txt from the same folder, if present */
+  fetch('tickets_prioritarios_semana.txt')
+    .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+    .then(function (text) {
+      var parsed = parseTicketsTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderTicketsTable(parsed.entries);
+      sortTicketsRows();
+      ticketsWarning.textContent = 'Tabela carregada automaticamente de tickets_prioritarios_semana.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
+    })
+    .catch(function () { /* file not found or not accessible — keep default data */ });
+
+
+  /* ---- Section 2: Add new ticket form ---- */
+  var REDES = [
+    "ARAUJO E LAMBOGLIA",
+    "AUTO POSTO DE ABASTECIMENTO VITRINE DE CAXIAS LTDA",
+    "COOPERCEMG",
+    "DLBC",
+    "DLBC-SP",
+    "GILBARCO SIGPOSTO",
+    "GPD EMPREENDIMENTOS",
+    "HOSPEDAGEM NUVEM",
+    "KYACOM",
+    "LBC",
+    "ML AUTOCOM",
+    "NAGIB SAIB COMBUSTIVEIS LTDA",
+    "PAULO 3 CORAÇÕES",
+    "PC SOLUTION",
+    "PHOENIX",
+    "PHOENIX - BASE 2",
+    "PHOENIX - LOJAS",
+    "PIONEIRO",
+    "POSTINHO SÃO BERNARDO LTDA",
+    "POSTO AUTO 7 CATANDUVA LTDA- EPP",
+    "POSTO BANDEIRA MATRIZ",
+    "POSTO DA BANDEIRA MATRIZ",
+    "POSTO INDUSTRIAS",
+    "POSTO MERITI LTDA",
+    "POSTO QUALITY BARUEL LTDA",
+    "QUALITY - NUCLEO 2",
+    "REDE 1000",
+    "REDE 7",
+    "REDE 89",
+    "REDE ABASTECEDORA BRASIL",
+    "REDE ABREU",
+    "REDE ABREU E FILHOS (RJ)",
+    "REDE ACCORD TRANSPORTES E COMERCIO",
+    "REDE ACESSO NORTE",
+    "REDE AF",
+    "REDE AGLE",
+    "REDE AGUIA JOIA (SR)",
+    "REDE ALBERTO",
+    "REDE ALCATEIA",
+    "REDE ALDEIA",
+    "REDE ALEXANDRE",
+    "REDE ALGO MAIS",
+    "REDE ALIANÇA",
+    "REDE ALIANÇA BH",
+    "REDE ALLTIME",
+    "REDE ALTEROSA",
+    "REDE ALVES RODRIGUES E CIA LTDA",
+    "REDE AMERICO CABRAL",
+    "REDE ANACLETO",
+    "REDE ANIBAL",
+    "REDE ARAUJO",
+    "REDE ARAUJO E LAMBOGLIA",
+    "REDE ARAUJO SP",
+    "REDE ARINELLA",
+    "REDE ARUANA",
+    "REDE ATM",
+    "REDE AUTO GIRO",
+    "REDE AUTO POSTO AZES JUNIOR LTDA",
+    "REDE AUTO POSTO BOA VIAGEM",
+    "REDE AUTO POSTO BR364",
+    "REDE AUTO POSTO DOIS AMIGOS LTDA",
+    "REDE AUTO POSTO E SERVICOS IMBASSAI",
+    "REDE AUTO POSTO ECR EIRELI",
+    "REDE AUTO POSTO FLIPER LTDA",
+    "REDE AUTO POSTO KAYAMAR LTDA",
+    "REDE AUTO POSTO KJSA",
+    "REDE AUTO POSTO MONTANA LTDA",
+    "REDE AUTO POSTO MONTE ALEGRE LTDA",
+    "REDE AUTO POSTO NARDOBAL LTDA",
+    "REDE AUTO POSTO NOVO WEST",
+    "REDE AUTO POSTO PALADINO",
+    "REDE AUTO POSTO PATURI",
+    "REDE AUTO POSTO SANTAFE LTDA ME",
+    "REDE AUTO POSTO SAO LONGUINHO",
+    "REDE AUTO POSTO TRES FILHOS LTDA",
+    "REDE AUTO POSTO VENTANIA",
+    "REDE AVALON",
+    "REDE BANDEIRA MATRIZ",
+    "REDE BANDEIRA MG",
+    "REDE BANDEIRANTES (JF)",
+    "REDE BARRA LONGA",
+    "REDE BARRABELA AUTO POSTO LTDA",
+    "REDE BARREIRO",
+    "REDE BEIJA FLOR",
+    "REDE BEIRA RIO CAPITOLIO",
+    "REDE BOA ESPERANCA(RP)",
+    "REDE BOA VIAGEM (JF)",
+    "REDE BOLOS MARA",
+    "REDE BONANZA",
+    "REDE BRASIL PETRO",
+    "REDE BRASIL PETRO (RP)",
+    "REDE BURITIRAMA",
+    "REDE CABANA",
+    "REDE CABANA DA MANTIQUEIRA",
+    "REDE CALUANA",
+    "REDE CALYPSO",
+    "REDE CANAA",
+    "REDE CANAA (NAVES E AGUIAR)",
+    "REDE CAPELA NOVA",
+    "REDE CARIBBEAN",
+    "REDE CARLU",
+    "REDE CARVALHO E GOMES",
+    "REDE CARVALHO ENGENHARIA",
+    "REDE CAXUXA",
+    "REDE CAÇULA",
+    "REDE CENTRAL DE EMBU GUAÇU",
+    "REDE CISNE",
+    "REDE COLIBRI",
+    "REDE COMBUSTIVEIS DUZEZINHO",
+    "REDE COMERCIAL PAGANO",
+    "REDE CONTIN",
+    "REDE COOPERCEMG",
+    "REDE CP CONVENIÊNCIA",
+    "REDE DANGO",
+    "REDE DENISE",
+    "REDE DGET",
+    "REDE DIBELLO",
+    "REDE DIOGENES SPINELI SOARES EPP",
+    "REDE DM",
+    "REDE DMA",
+    "REDE DONPEPE",
+    "REDE DRL",
+    "REDE DTA",
+    "REDE ESTAÇÃO BH",
+    "REDE EXPO",
+    "REDE FAGUNDES",
+    "REDE FARIA",
+    "REDE FELIMAR AUTO POSTO",
+    "REDE FLEX",
+    "REDE FLIPER",
+    "REDE FLORENÇA",
+    "REDE FORMIGUENSE",
+    "REDE FORMULA",
+    "REDE FORZA",
+    "REDE FORZA 2",
+    "REDE FR BRANCO",
+    "REDE FS",
+    "REDE G & P",
+    "REDE GENTIL",
+    "REDE GEPEZEN",
+    "REDE GERSON",
+    "REDE GGC",
+    "REDE GILBERTO",
+    "REDE GIRA SOL",
+    "REDE GOMES E SILVA",
+    "REDE GROTTI",
+    "REDE GROTÃO",
+    "REDE GRUPO AGUIA - ALLGAS",
+    "REDE GUAÇU BRASIL",
+    "REDE GUEDALA",
+    "REDE HMAX",
+    "REDE HMAX (RIBEIRÃO)",
+    "REDE IGAS",
+    "REDE IMBASSAI",
+    "REDE INICIAL",
+    "REDE INTERNACIONAL RACING - AUTO POSTO ITAMARATY DE OSASCO LTDA",
+    "REDE IRMAOS BRAZ E CIA LTDA",
+    "REDE ITACEMA",
+    "REDE ITAGUARA",
+    "REDE J LOPES",
+    "REDE J SOARES GUIMARÃES EPP",
+    "REDE JAPAO",
+    "REDE JC CONVENIENCIAS LTDA",
+    "REDE JOIA DE GOIAS",
+    "REDE JUQUITIBA",
+    "REDE JUSSARA VIEIRA LOURENCO",
+    "REDE KALINCA",
+    "REDE KOBU",
+    "REDE LAMAPE",
+    "REDE LAU",
+    "REDE LESTE",
+    "REDE LEÃO ARCOS",
+    "REDE LF",
+    "REDE LIDER",
+    "REDE LILITO",
+    "REDE LOUZANO",
+    "REDE LUAR",
+    "REDE LUBRIMAX",
+    "REDE LUCAS GARCEZ",
+    "REDE LUZ DO ORIENTE",
+    "REDE MACELLERIA",
+    "REDE MAJEPAC",
+    "REDE MANACAS",
+    "REDE MANAUS",
+    "REDE MARANDUVA",
+    "REDE MARANESI",
+    "REDE MARANEY AUTO POSTO",
+    "REDE MARC",
+    "REDE MARLENE MARIS REINER",
+    "REDE MARTINHO",
+    "REDE MARTINS",
+    "REDE MAX CONVENIENCIA LTDA",
+    "REDE MDN",
+    "REDE MENDONÇA",
+    "REDE MERCADO",
+    "REDE MIL",
+    "REDE MILSETE",
+    "REDE MINE",
+    "REDE MINERAL",
+    "REDE MIRANDELLA",
+    "REDE MIRANTE",
+    "REDE MPP",
+    "REDE MURICY",
+    "REDE MW",
+    "REDE NAGIB",
+    "REDE NANCY",
+    "REDE NAÇÕES",
+    "REDE NETINHO (JF)",
+    "REDE NETINHO (RP)",
+    "REDE NEW",
+    "REDE NEWTON",
+    "REDE NIPON",
+    "REDE NOVA ERA",
+    "REDE NOVA EUROPA",
+    "REDE OPCAO",
+    "REDE ORIGINAL MAX AUTO POSTO LTDA",
+    "REDE OS PAMPAS CAFE LOJA DE CONVENIENCIA",
+    "REDE OSORIOS",
+    "REDE PALACE - RIO PRETO K",
+    "REDE PARA",
+    "REDE PARAISO (SÃO JOAO DO PARAISO)",
+    "REDE PARATI",
+    "REDE PARCEIRO",
+    "REDE PAREBEM",
+    "REDE PARIS",
+    "REDE PENALVA",
+    "REDE PEPA",
+    "REDE PEQUENO PRINCIPE",
+    "REDE PERALTAS",
+    "REDE PEROBA",
+    "REDE PETRO GLORIA",
+    "REDE PETRO OURO",
+    "REDE PETROCARMO",
+    "REDE PETROFILTROS",
+    "REDE PETRONOVO",
+    "REDE PHOENIX",
+    "REDE PIONEIRO",
+    "REDE PIRICA",
+    "REDE PODIUM",
+    "REDE PONTE NOVA",
+    "REDE PONTO SOLAR COMERCIAL LTDA",
+    "REDE PORTO CARRERO",
+    "REDE PORTO CONVENIENCIA LTDA - ME",
+    "REDE PORTO PORTO CARRERO",
+    "REDE POSTO 252 DE PIRAI LTDA",
+    "REDE POSTO 5 IRMÃOS LTDA",
+    "REDE POSTO 7 VAREJISTA LTDA",
+    "REDE POSTO ABASTESSO",
+    "REDE POSTO ALVORADA DO OESTE",
+    "REDE POSTO AMAZONIA NOSSA",
+    "REDE POSTO AMIZADE LTDA",
+    "REDE POSTO AVENIDA BQ LTDA",
+    "REDE POSTO BAGRE",
+    "REDE POSTO BARRA LONGA",
+    "REDE POSTO CAMPEAO (SETE LAGOAS)",
+    "REDE POSTO CHOPOTRES",
+    "REDE POSTO CIA DO CAMINHAO",
+    "REDE POSTO CIDADE IGARAPE",
+    "REDE POSTO CIDADE IGARAPE LTDA",
+    "REDE POSTO DE SERVIÇO D ALCANTARA L",
+    "REDE POSTO GARANHAO",
+    "REDE POSTO GRAJAU",
+    "REDE POSTO IGNOTTI",
+    "REDE POSTO IPOEMA",
+    "REDE POSTO LAFAIETE",
+    "REDE POSTO LETICIA",
+    "REDE POSTO MANÃO",
+    "REDE POSTO MARTINEZ EIRELI",
+    "REDE POSTO MATUTINA",
+    "REDE POSTO METROPOLITANO",
+    "REDE POSTO MIRANTE VIA NORTE LTDA",
+    "REDE POSTO MORUMBI STAR",
+    "REDE POSTO NAUTICO ALIANCA LTDA",
+    "REDE POSTO NOVE DE JULHO",
+    "REDE POSTO PASSATEMPO LTDA",
+    "REDE POSTO QUICK LTDA",
+    "REDE POSTO QUINDUMBA LTDA",
+    "REDE POSTO REDE CAPARAO",
+    "REDE POSTO RODA MAIS",
+    "REDE POSTO RURAL",
+    "REDE POSTO SAO CRISTOVAO",
+    "REDE POSTO SAUDADE LTDA",
+    "REDE POSTO SB",
+    "REDE POSTO SENHOR DO BOM JESUS",
+    "REDE POSTO SERRA DO CABRAL",
+    "REDE POSTO SERRA DO CIPO",
+    "REDE POSTO TRAVESSIA LTDA",
+    "REDE POSTO TRIANGULO (BAHIA)",
+    "REDE POSTO UNO",
+    "REDE POSTO USINA SAO DOMINGOS",
+    "REDE POSTO VAPABUCU LTDA",
+    "REDE POSTO ZAPIR LTDA",
+    "REDE PRAIA",
+    "REDE PROFETAS",
+    "REDE PUROGAS",
+    "REDE QUALITY",
+    "REDE QUARUP",
+    "REDE QUATRO PRIMOS",
+    "REDE QUICK",
+    "REDE R.E.M",
+    "REDE RAMALHÃO",
+    "REDE REAL",
+    "REDE REAL SETE",
+    "REDE REDDE DE POSTO TZ LTDA",
+    "REDE RETA",
+    "REDE RIBAS",
+    "REDE RIEGERT",
+    "REDE RIO",
+    "REDE RIO COA",
+    "REDE RIVIEIRA",
+    "REDE RIVIERA",
+    "REDE ROBERTAO",
+    "REDE RODA BRANCA",
+    "REDE RODA MAIS",
+    "REDE ROTATORIA",
+    "REDE ROYAL (MATRIZ)",
+    "REDE RT",
+    "REDE RUTH",
+    "REDE SANTA CLARA",
+    "REDE SANTA RITA (CARLOS CHAGAS)",
+    "REDE SANTO CANTO",
+    "REDE SAO BENTO",
+    "REDE SAO LOURENCO",
+    "REDE SAO THOME",
+    "REDE SATURNO AUTO POSTO",
+    "REDE SBT",
+    "REDE SERRA",
+    "REDE SERRA NEGRA COMERCIO E SERVIÇO",
+    "REDE SETEE",
+    "REDE SOMA COMERCIO DE PNEUS E PECAS",
+    "REDE STOFEL",
+    "REDE SUPER NOVA",
+    "REDE SÃO BARTOLOMEU",
+    "REDE SÃO BENTO",
+    "REDE SÃO JORGE",
+    "REDE TASCA",
+    "REDE TE CONTEI LTDA",
+    "REDE TIGRESA",
+    "REDE TNE",
+    "REDE TORREALBA",
+    "REDE TOTALITY",
+    "REDE TREVO (BOM JESUS DO AMPARO)",
+    "REDE TREVO BETIM",
+    "REDE TRIANI",
+    "REDE TROPICAL COMBUSTIVEIS LTDA",
+    "REDE TUPY",
+    "REDE UIRAPURU",
+    "REDE UNICOOP",
+    "REDE UNIDOS",
+    "REDE VALVERDAO",
+    "REDE VENERANDO",
+    "REDE VERANEIO",
+    "REDE VIA NORTE",
+    "REDE VILARINHO",
+    "REDE VILLA LOBOS",
+    "REDE VISAO",
+    "REDE VOVO GONZAGA",
+    "REDE WALBRAX",
+    "REDE WAP",
+    "REDE XAVANTE",
+    "REDE XINGU",
+    "REDE ZAP",
+    "REVENDA JF",
+    "WALSOFT TECNOLOGIA E INFRAESTRUTURA"
+  ];
+  var MOTIVOS = [
+    'Tipo da demanda/Impacto',
+    'Urgência Comercial',
+    'Urgência por tempo de Abertura',
+    'Urgência Rede 7',
+    'Urgência Ewerton',
+    'Urgência Fernando',
+    'Urgência Diretoria',
+    'Urgência Nuvem Nova'
+  ];
+
+  var newTicketNumero = document.getElementById('new-ticket-numero');
+  var newTicketRede = document.getElementById('new-ticket-rede');
+  var newTicketResponsavel = document.getElementById('new-ticket-responsavel');
+  var newTicketMotivo = document.getElementById('new-ticket-motivo');
+  var newTicketCheckpoint = document.getElementById('new-ticket-checkpoint');
+  var addTicketBtn = document.getElementById('add-ticket-btn');
+  var addTicketWarning = document.getElementById('add-ticket-warning');
+
+  var redesDatalist = document.getElementById('redes-datalist');
+  REDES.slice().sort(function (a, b) {
+    return a.localeCompare(b, 'pt-BR', { sensitivity: 'base' });
+  }).forEach(function (rede) {
+    var opt = document.createElement('option');
+    opt.value = rede;
+    redesDatalist.appendChild(opt);
+  });
+
+  MEMBERS.forEach(function (name) {
+    var opt = document.createElement('option');
+    opt.value = name;
+    opt.textContent = name;
+    newTicketResponsavel.appendChild(opt);
+  });
+  var optSemResp = document.createElement('option');
+  optSemResp.value = 'Sem Responsável';
+  optSemResp.textContent = 'Sem Responsável';
+  newTicketResponsavel.appendChild(optSemResp);
+
+  MOTIVOS.forEach(function (m) {
+    var opt = document.createElement('option');
+    opt.value = m;
+    opt.textContent = m;
+    newTicketMotivo.appendChild(opt);
+  });
+
+  function validateAddTicket() {
+    var ok = newTicketNumero.value.trim().length > 0 &&
+      newTicketRede.value.trim().length > 0 &&
+      newTicketResponsavel.value &&
+      newTicketMotivo.value;
+    addTicketBtn.disabled = !ok;
+    addTicketWarning.textContent = '';
+  }
+  [newTicketNumero, newTicketRede, newTicketResponsavel, newTicketMotivo].forEach(function (el) {
+    el.addEventListener('input', validateAddTicket);
+    el.addEventListener('change', validateAddTicket);
+  });
+  validateAddTicket();
+
+  addTicketBtn.addEventListener('click', function () {
+    var ticket = newTicketNumero.value.trim();
+    var rede = newTicketRede.value.trim();
+    var responsavel = newTicketResponsavel.value;
+    var motivo = newTicketMotivo.value;
+    var checkpoint = newTicketCheckpoint.value.trim();
+
+    if (!ticket || !rede || !responsavel || !motivo) {
+      addTicketWarning.textContent = 'Preencha Ticket, Rede, Responsável e Motivo para adicionar.';
+      return;
+    }
+
+    var tr = document.createElement('tr');
+    var checkpointHtml = checkpoint ? escapeHtml(checkpoint) : '<span class="empty">—</span>';
+    tr.innerHTML =
+      '<td><a class="ticket-link" href="' + TICKET_BASE_URL + encodeURIComponent(ticket) + '" target="_blank" rel="noopener noreferrer"><strong>' + escapeHtml(ticket) + '</strong></a></td>' +
+      '<td>' + escapeHtml(rede) + '</td>' +
+      '<td class="resp-cell">' + respCellHtml(responsavel) + '</td>' +
+      '<td>' + escapeHtml(motivo) + '</td>' +
+      '<td>' + checkpointHtml + '</td>' +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover ticket">Remover</button></td>';
+    ticketsTbody.appendChild(tr);
+    sortTicketsRows();
+
+    newTicketNumero.value = '';
+    newTicketRede.value = '';
+    newTicketResponsavel.value = '';
+    newTicketMotivo.value = '';
+    newTicketCheckpoint.value = '';
+    validateAddTicket();
+  });
+
+  /* ---- PDF export ---- */
+  document.getElementById('gerar-pdf-btn').addEventListener('click', function () {
+    window.print();
+  });
+})();
+</script>
+
+</body>
+</html>
