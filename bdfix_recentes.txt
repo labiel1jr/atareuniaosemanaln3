@@ -16,3 +16,9 @@
 539705|Criação de BDFIX para excluir fatura unificada sem informação - NODE18|NUVEM
 539772|BDFIX Criação de BDFIX para excluir fatura unificada sem informação - NODE18|NUVEM
 538840|BDFIX Ao estornar lançamentos no contas a pagar, apresenta erro 4 ao estornar pagamento do título BD 91153, node 17|NUVEM
+540772|PROBLEMA PARA DELETAR CAIXAS|NUVEM
+539504|QUANTIDADE UNITARIA DE SOLICITAÇÃO DE FORNECIMENTO DA PREFEITURA DIFERENTE DA NOTA EMITIDA NO LBCGAS NODE21|NUVEM
+541265|Solicitação de BDFIX – Alteração de código de cliente na EMP0012 - node 15|NUVEM
+541326|Solicitação de BDFIX – Exclusão de Faturamento Unificado NODE 18|NUVEM
+541524|BDFIX para alterar a quantidade dos itens para emissão de NF-e para prefeitura - NODE21|NUVEM
+540064|Adiantamento de cliente/fornecedor está constando número desconhecido na frente do titular e perdeu vinculo do cadastro de cliente - Node 20|NUVEM

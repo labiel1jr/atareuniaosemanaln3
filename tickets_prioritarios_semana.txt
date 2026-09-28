@@ -1,11 +1,9 @@
 465169|REDE QUALITY|Felipe Vieira|Tipo da demanda/Impacto|Demanda em fase de teste
 520252|REDE ATM|Felipe Vieira|Tipo da demanda/Impacto|
-528399|REDE RAMALHÃO|Felipe Vieira|Urgência Diretoria|
 521659|GILBARCO SIGPOSTO|Fernando|Urgência Fernando|
 502328|REDE PRAIA|Flaubert|Urgência comercial|
 440918|REDE TUPY|Rafael Jr|Urgência Fernando|Criar arquivo temporário de pgto/lançamento/vencimento em memória com novos valores.
 518675|REVENDA JF|Rafael Jr|Cliente estratégico|
-540064|REDE PRAIA|Rafael Jr|Tipo da demanda/Impacto|
 461463|REDE PALACE|Wesley Phillipe|Urgência Ewerton|Levantamento do motivo do identificado estar travado após o preset.
 456482|REDE POSTO USINA|Wesley Phillipe|Por tempo de abertura|
 485227|REDE PRAIA|Sem Responsável|Urgência Ewerton|
