@@ -6,7 +6,6 @@
 535783|Indisponibilidade do perfil Gerencial+PDV no cadastro de usuários - Região 01  CÓD. 3502 - MENDONCA LUB LTDA-REDISPONIBILIZAR PERFIS DE ACESSO PADRAO-REDE MEDONÇA-NODE13|NUVEM
 535027|Análise e Recuperação de Placas Removidas dos Cadastros de Clientes por EMP*NODE 13|NUVEM
 535210|Indisponibilidade do perfil Gerencial+PDV no cadastro de usuários NODE20|NUVEM
-534997|Duplicidade de inventário na ficha de estoque do produto IPI F1 MAS SINT 5W30 SN/RC, código 07896587320838 - NODE13|NUVEM
 536476|ALTERAR CADASTRO LOCAL PARA REDE|NUVEM
 517081|O filtro do fornecedor "COMPANHIA DE GÁS DE MINAS GERAIS GASMIG" na aba Contas a Pagar e nas entradas de notas está apresentando um histórico de transações incompleto.- NODE 16|NUVEM
 539010|Faturas unificadas ficando em branco, deixando as faturas relacionadas disponíveis para um novo faturamento|NUVEM
