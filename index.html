@@ -248,21 +248,9 @@
   @media print { .chart-zoom-hint { display: none !important; } }
   .chart-caption { font-size: 12.5px; color: var(--ink-soft); margin-top: 8px; }
 
-  .notice-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-  .notice-list li {
-    border-left: 3px solid var(--brand);
-    background: var(--surface);
-    padding: 8px 12px;
-    border-radius: 0 6px 6px 0;
-    font-size: 13.5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .notice-list li .notice-text { flex: 1 1 auto; }
-  .notice-list li .notice-remove-btn { flex: 0 0 auto; }
-  @media print { .notice-remove-btn { display: none !important; } }
+  th.col-data, td.col-data { width: 1%; white-space: nowrap; }
+  tr.aviso-hoje td { background: var(--info-bg); }
+  tr.aviso-passado td { color: var(--ink-soft); }
   .empty { color: var(--ink-soft); font-style: italic; }
 
   footer {
@@ -746,8 +734,6 @@
 
     .remove-row-btn { padding: 6px 12px; font-size: 11px; min-height: 32px; }
 
-    .notice-list li { padding: 10px 12px; gap: 8px; }
-    .notice-list li .notice-text { font-size: 13px; }
 
     .setup-card { padding: 20px 16px; border-radius: 10px; }
     .setup-card h1 { font-size: 18px; }
@@ -1087,12 +1073,21 @@
 
 <section class="card" id="sec9">
   <h2><span class="num">09</span> Avisos</h2>
-  <ul class="notice-list" id="avisos-list">
-  </ul>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th class="col-data">Data</th><th>Aviso</th><th class="col-actions">Ações</th></tr></thead>
+    <tbody id="avisos-tbody">
+    </tbody>
+  </table>
+  </div>
 
   <div class="add-analise-row">
+    <div class="field">
+      <label for="new-aviso-data">Data</label>
+      <input type="date" id="new-aviso-data">
+    </div>
     <div class="field field-wide">
-      <label for="new-aviso-texto">Novo aviso</label>
+      <label for="new-aviso-texto">Descrição do aviso</label>
       <input type="text" id="new-aviso-texto" placeholder="Digite o aviso…">
     </div>
     <button class="btn-primary" id="add-aviso-btn" type="button" disabled>Adicionar</button>
@@ -1103,7 +1098,7 @@
     <button class="btn-secondary" id="save-aviso-txt-btn" type="button">💾 Salvar TXT</button>
     <button class="btn-secondary" id="load-aviso-txt-btn" type="button">📂 Carregar TXT</button>
     <input type="file" id="load-aviso-txt-input" accept=".txt" style="display:none;">
-    <span class="txt-hint">Um aviso por linha</span>
+    <span class="txt-hint">Formato: Data (dd/mm/aaaa) | Aviso (um por linha) — ordenado pela data</span>
   </div>
   <p class="setup-hint" id="aviso-txt-warning"></p>
 </section>
@@ -1175,6 +1170,8 @@
     <button class="btn-secondary" id="save-bdfix-txt-btn" type="button">💾 Salvar TXT</button>
     <button class="btn-secondary" id="load-bdfix-txt-btn" type="button">📂 Carregar TXT</button>
     <input type="file" id="load-bdfix-txt-input" accept=".txt" style="display:none;">
+    <button class="btn-secondary" id="img-save-bdfix-btn" type="button">🖼 Salvar imagem</button>
+    <button class="btn-secondary" id="img-copy-bdfix-btn" type="button">📋 Copiar imagem</button>
     <span class="txt-hint">Formato: Ticket | Título | Local (um por linha)</span>
   </div>
   <p class="setup-hint" id="bdfix-txt-warning"></p>
@@ -1215,6 +1212,8 @@
     <button class="btn-secondary" id="save-bug-txt-btn" type="button">💾 Salvar TXT</button>
     <button class="btn-secondary" id="load-bug-txt-btn" type="button">📂 Carregar TXT</button>
     <input type="file" id="load-bug-txt-input" accept=".txt" style="display:none;">
+    <button class="btn-secondary" id="img-save-bug-btn" type="button">🖼 Salvar imagem</button>
+    <button class="btn-secondary" id="img-copy-bug-btn" type="button">📋 Copiar imagem</button>
     <span class="txt-hint">Formato: Ticket | Título/Módulo | Descrição | Solução (um por linha)</span>
   </div>
   <p class="setup-hint" id="bug-txt-warning"></p>
@@ -2454,62 +2453,102 @@
     })
     .catch(function () { /* file not found or not accessible — table stays empty */ });
 
-  /* ---- Section 9: Avisos ---- */
-  var avisosList = document.getElementById('avisos-list');
+  /* ---- Section 9: Avisos (Data | Aviso, ordenados pela data) ---- */
+  var avisosTbody = document.getElementById('avisos-tbody');
   var avisoWarning = document.getElementById('aviso-txt-warning');
+  var newAvisoData = document.getElementById('new-aviso-data');
   var newAvisoTexto = document.getElementById('new-aviso-texto');
   var addAvisoBtn = document.getElementById('add-aviso-btn');
   var addAvisoWarning = document.getElementById('add-aviso-warning');
 
-  function buildAvisoLiHtml(texto) {
-    return '<span class="notice-text">' + escapeHtml(texto) + '</span>' +
-      '<button type="button" class="remove-row-btn notice-remove-btn" title="Remover aviso">Remover</button>';
+  /* dd/mm/aaaa -> aaaammdd (chave numérica para ordenar); null se a data for inválida */
+  function avisoDateKey(data) {
+    var m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(data);
+    if (!m) return null;
+    var d = parseInt(m[1], 10), mo = parseInt(m[2], 10), y = parseInt(m[3], 10);
+    var dt = new Date(y, mo - 1, d);
+    if (dt.getFullYear() !== y || dt.getMonth() !== mo - 1 || dt.getDate() !== d) return null;
+    return y * 10000 + mo * 100 + d;
   }
 
-  function renderAvisosList(entries) {
-    avisosList.innerHTML = '';
-    entries.forEach(function (texto) {
-      var li = document.createElement('li');
-      li.innerHTML = buildAvisoLiHtml(texto);
-      avisosList.appendChild(li);
+  function todayDateKey() {
+    var t = new Date();
+    return t.getFullYear() * 10000 + (t.getMonth() + 1) * 100 + t.getDate();
+  }
+
+  /* aaaa-mm-dd (input type="date") -> dd/mm/aaaa */
+  function isoToBr(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+    return m ? (m[3] + '/' + m[2] + '/' + m[1]) : '';
+  }
+
+  function buildAvisoRowHtml(data, texto) {
+    return '<td class="col-data"><strong>' + escapeHtml(data) + '</strong></td>' +
+      '<td>' + escapeHtml(texto) + '</td>' +
+      '<td class="col-actions"><button type="button" class="remove-row-btn" title="Remover aviso">Remover</button></td>';
+  }
+
+  function avisoRowFromCells(row) {
+    var cells = row.querySelectorAll('td');
+    return { data: cells[0].textContent.trim(), texto: cells[1].textContent.trim() };
+  }
+
+  function currentAvisos() {
+    return Array.prototype.slice.call(avisosTbody.querySelectorAll('tr')).map(avisoRowFromCells);
+  }
+
+  function renderAvisosTable(entries) {
+    var hoje = todayDateKey();
+    var sorted = entries
+      .map(function (d, i) { return { d: d, i: i, key: avisoDateKey(d.data) || 0 }; })
+      .sort(function (a, b) { return (a.key - b.key) || (a.i - b.i); });
+
+    avisosTbody.innerHTML = '';
+    sorted.forEach(function (item) {
+      var tr = document.createElement('tr');
+      if (item.key === hoje) tr.className = 'aviso-hoje';
+      else if (item.key < hoje) tr.className = 'aviso-passado';
+      tr.innerHTML = buildAvisoRowHtml(item.d.data, item.d.texto);
+      avisosTbody.appendChild(tr);
     });
   }
 
-  avisosList.addEventListener('click', function (e) {
+  avisosTbody.addEventListener('click', function (e) {
     var btn = e.target.closest('.remove-row-btn');
     if (!btn) return;
-    var li = btn.closest('li');
-    if (li) li.remove();
+    var row = btn.closest('tr');
+    if (row) row.remove();
   });
 
   function validateAddAviso() {
-    addAvisoBtn.disabled = newAvisoTexto.value.trim().length === 0;
+    addAvisoBtn.disabled = !newAvisoData.value || newAvisoTexto.value.trim().length === 0;
     addAvisoWarning.textContent = '';
   }
+  newAvisoData.addEventListener('input', validateAddAviso);
+  newAvisoData.addEventListener('change', validateAddAviso);
   newAvisoTexto.addEventListener('input', validateAddAviso);
   validateAddAviso();
 
   addAvisoBtn.addEventListener('click', function () {
+    var data = isoToBr(newAvisoData.value);
     var texto = newAvisoTexto.value.trim();
-    if (!texto) {
-      addAvisoWarning.textContent = 'Digite o texto do aviso para adicionar.';
+    if (!data || !avisoDateKey(data) || !texto) {
+      addAvisoWarning.textContent = 'Informe a data e a descrição do aviso para adicionar.';
       return;
     }
-    var li = document.createElement('li');
-    li.innerHTML = buildAvisoLiHtml(texto);
-    avisosList.appendChild(li);
+    var entries = currentAvisos();
+    entries.push({ data: data, texto: texto });
+    renderAvisosTable(entries);
 
+    newAvisoData.value = '';
     newAvisoTexto.value = '';
     validateAddAviso();
   });
 
   function buildAvisosTXT() {
-    var items = Array.prototype.slice.call(avisosList.querySelectorAll('li'));
-    var lines = items.map(function (li) {
-      var textEl = li.querySelector('.notice-text');
-      return (textEl ? textEl.textContent : li.textContent).trim();
-    });
-    return lines.join('\n');
+    return currentAvisos().map(function (d) {
+      return [d.data, d.texto].join('|');
+    }).join('\n');
   }
 
   document.getElementById('save-aviso-txt-btn').addEventListener('click', function () {
@@ -2531,8 +2570,28 @@
     loadAvisoInput.click();
   });
 
+  /* Formato atual: "dd/mm/aaaa|aviso". Também aceita o formato antigo "dd/mm/aaaa - aviso" (ou "—"). */
   function parseAvisosTXT(text) {
-    return text.split(/\r?\n/).map(function (l) { return l.trim(); }).filter(function (l) { return l.length > 0; });
+    var lines = text.split(/\r?\n/).map(function (l) { return l.trim(); }).filter(function (l) { return l.length > 0; });
+    var entries = [];
+    var invalid = 0;
+    lines.forEach(function (line) {
+      var data, texto;
+      var pipe = line.indexOf('|');
+      if (pipe >= 0) {
+        data = line.slice(0, pipe).trim();
+        texto = line.slice(pipe + 1).trim();
+      } else {
+        var m = /^(\d{2}\/\d{2}\/\d{4})\s*[—–-]\s*(.+)$/.exec(line);
+        if (m) { data = m[1]; texto = m[2].trim(); }
+      }
+      if (data && texto && avisoDateKey(data)) {
+        entries.push({ data: data, texto: texto });
+      } else {
+        invalid++;
+      }
+    });
+    return { entries: entries, invalid: invalid };
   }
 
   loadAvisoInput.addEventListener('change', function (e) {
@@ -2541,13 +2600,14 @@
     var reader = new FileReader();
     reader.onload = function (ev) {
       var text = String(ev.target.result || '');
-      var lines = parseAvisosTXT(text);
-      if (lines.length === 0) {
+      var parsed = parseAvisosTXT(text);
+      if (parsed.entries.length === 0) {
         avisoWarning.textContent = 'Não foi possível ler nenhuma linha válida do arquivo TXT.';
         return;
       }
-      renderAvisosList(lines);
-      avisoWarning.textContent = 'Lista de avisos atualizada a partir do arquivo TXT.';
+      renderAvisosTable(parsed.entries);
+      avisoWarning.textContent = 'Avisos atualizados a partir do arquivo TXT.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     };
     reader.onerror = function () {
       avisoWarning.textContent = 'Erro ao ler o arquivo TXT.';
@@ -2559,12 +2619,13 @@
   fetch('avisos.txt')
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
-      var lines = parseAvisosTXT(text);
-      if (lines.length === 0) return;
-      renderAvisosList(lines);
-      avisoWarning.textContent = 'Lista carregada automaticamente de avisos.txt.';
+      var parsed = parseAvisosTXT(text);
+      if (parsed.entries.length === 0) return;
+      renderAvisosTable(parsed.entries);
+      avisoWarning.textContent = 'Avisos carregados automaticamente de avisos.txt.' +
+        (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — list stays empty */ });
+    .catch(function () { /* file not found or not accessible — table stays empty */ });
 
   /* ---- Section 10: Impactos / Acontecimentos da Semana ---- */
   var impactosTbody = document.getElementById('impactos-tbody');
@@ -3738,6 +3799,162 @@
     newTicketMotivo.value = '';
     newTicketCheckpoint.value = '';
     validateAddTicket();
+  });
+
+  /* ---- Exportar seções 11 (BDFix) e 12 (Bugs) como imagem PNG para anexar em e-mails ---- */
+  var HTML2CANVAS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+  var html2canvasPromise = null;
+
+  function loadHtml2canvas() {
+    if (window.html2canvas) return Promise.resolve(window.html2canvas);
+    if (!html2canvasPromise) {
+      html2canvasPromise = new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = HTML2CANVAS_URL;
+        s.onload = function () { resolve(window.html2canvas); };
+        s.onerror = function () { html2canvasPromise = null; reject(new Error('html2canvas')); };
+        document.head.appendChild(s);
+      });
+    }
+    return html2canvasPromise;
+  }
+
+  /* Monta, fora da tela, uma versão clara da tabela (sem a coluna Ações) pronta para virar imagem */
+  function buildSnapshotEl(opts) {
+    var hoje = new Date();
+    var dataBr = ('0' + hoje.getDate()).slice(-2) + '/' + ('0' + (hoje.getMonth() + 1)).slice(-2) + '/' + hoje.getFullYear();
+    var font = "'Sora', 'Segoe UI', Arial, sans-serif";
+    var border = '1px solid #9aa5b1';
+
+    var html = '<div style="font-family:' + font + ';background:#ffffff;color:#1b2430;padding:28px;width:' + opts.width + 'px;box-sizing:border-box;">' +
+      '<div style="border-left:5px solid #2e4d6b;padding-left:14px;margin-bottom:18px;">' +
+        '<div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5a6472;">Desenvolvimento N3 · Ata de Alinhamento Semanal</div>' +
+        '<div style="font-size:22px;font-weight:700;color:#1d3349;margin-top:4px;">' + escapeHtml(opts.titulo) + '</div>' +
+        '<div style="font-size:12.5px;color:#5a6472;margin-top:2px;">' + dataBr + ' · ' + opts.rows.length + ' registro(s)</div>' +
+      '</div>' +
+      '<table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.45;">' +
+        '<thead><tr>' + opts.headers.map(function (h, i) {
+          return '<th style="background:#e2e8ee;color:#1d3349;text-align:left;padding:9px 10px;border:' + border +
+            ';font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;' + (opts.colStyles[i] || '') + '">' + escapeHtml(h) + '</th>';
+        }).join('') + '</tr></thead><tbody>' +
+        opts.rows.map(function (cells, r) {
+          var bg = r % 2 ? '#f6f7f9' : '#ffffff';
+          return '<tr>' + cells.map(function (c, i) {
+            return '<td style="background:' + bg + ';padding:8px 10px;border:' + border + ';vertical-align:top;' +
+              (i === 0 ? 'font-weight:700;color:#1d5fa8;' : '') + (opts.colStyles[i] || '') + '">' + escapeHtml(c) + '</td>';
+          }).join('') + '</tr>';
+        }).join('') +
+      '</tbody></table></div>';
+
+    var wrap = document.createElement('div');
+    wrap.style.cssText = 'position:fixed;left:-20000px;top:0;z-index:-1;';
+    wrap.innerHTML = html;
+    document.body.appendChild(wrap);
+    return wrap;
+  }
+
+  function renderSnapshotBlob(opts) {
+    return loadHtml2canvas().then(function (h2c) {
+      var wrap = buildSnapshotEl(opts);
+      var target = wrap.firstChild;
+      var ready = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+      return ready
+        .then(function () { return h2c(target, { scale: 2, backgroundColor: '#ffffff', logging: false }); })
+        .then(function (canvas) {
+          return new Promise(function (resolve, reject) {
+            canvas.toBlob(function (blob) { blob ? resolve(blob) : reject(new Error('toBlob')); }, 'image/png');
+          });
+        })
+        .finally(function () { document.body.removeChild(wrap); });
+    });
+  }
+
+  function setupImageExport(cfg) {
+    var saveBtn = document.getElementById(cfg.saveBtnId);
+    var copyBtn = document.getElementById(cfg.copyBtnId);
+    var warn = document.getElementById(cfg.warningId);
+
+    function collect() {
+      var rows = Array.prototype.slice.call(cfg.tbody.querySelectorAll('tr')).map(cfg.rowToCells);
+      if (rows.length === 0) {
+        warn.textContent = 'A tabela está vazia — não há o que exportar.';
+        return null;
+      }
+      return { titulo: cfg.titulo, headers: cfg.headers, colStyles: cfg.colStyles, width: cfg.width, rows: rows };
+    }
+
+    function run(btn, action) {
+      var opts = collect();
+      if (!opts) return;
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '⏳ Gerando…';
+      renderSnapshotBlob(opts)
+        .then(action)
+        .catch(function (err) {
+          warn.textContent = (err && err.message === 'html2canvas')
+            ? 'Não foi possível carregar o gerador de imagem (verifique a conexão com a internet).'
+            : 'Não foi possível gerar a imagem.';
+        })
+        .finally(function () { btn.disabled = false; btn.textContent = label; });
+    }
+
+    saveBtn.addEventListener('click', function () {
+      run(saveBtn, function (blob) {
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = cfg.fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        warn.textContent = 'Imagem salva como ' + cfg.fileName + '.';
+      });
+    });
+
+    copyBtn.addEventListener('click', function () {
+      if (!navigator.clipboard || typeof window.ClipboardItem === 'undefined') {
+        warn.textContent = 'Este navegador não permite copiar imagens — use "Salvar imagem".';
+        return;
+      }
+      run(copyBtn, function (blob) {
+        return navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]).then(function () {
+          warn.textContent = 'Imagem copiada — cole (Ctrl+V) no corpo do e-mail.';
+        });
+      });
+    });
+  }
+
+  function imageFileDate() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+
+  setupImageExport({
+    tbody: bdfixTbody,
+    saveBtnId: 'img-save-bdfix-btn',
+    copyBtnId: 'img-copy-bdfix-btn',
+    warningId: 'bdfix-txt-warning',
+    titulo: 'BDFix — Recentes',
+    headers: ['Ticket', 'Título', 'Local'],
+    colStyles: ['white-space:nowrap;width:1%;', '', 'white-space:nowrap;width:1%;'],
+    width: 1000,
+    fileName: 'bdfix_recentes_' + imageFileDate() + '.png',
+    rowToCells: function (row) { var d = bdfixRowFromCells(row); return [d.ticket, d.titulo, d.local]; }
+  });
+
+  setupImageExport({
+    tbody: bugsTbody,
+    saveBtnId: 'img-save-bug-btn',
+    copyBtnId: 'img-copy-bug-btn',
+    warningId: 'bug-txt-warning',
+    titulo: 'Bugs Recentes',
+    headers: ['Ticket', 'Título / Módulo', 'Descrição do Problema', 'Solução / Ação Realizada'],
+    colStyles: ['white-space:nowrap;width:1%;', 'width:22%;', 'width:37%;', 'width:37%;'],
+    width: 1200,
+    fileName: 'bugs_recentes_' + imageFileDate() + '.png',
+    rowToCells: function (row) { var d = bugRowFromCells(row); return [d.ticket, d.titulo, d.descricao, d.solucao]; }
   });
 
   /* ---- PDF export ---- */

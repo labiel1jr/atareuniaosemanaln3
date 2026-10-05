@@ -29,6 +29,8 @@ O site é **um único arquivo `index.html`**, sem backend, sem build e sem depen
 - **Indicadores e gráfico**: KPIs e um gráfico de barras em SVG (Meta x Realizado), com zoom pela roda do mouse e reset com duplo clique.
 - **Tickets prioritários**: tabela ordenável por coluna, busca de rede com autocompletar e troca do responsável direto na célula.
 - **Exportação em PDF**: pelo diálogo de impressão do navegador, com um tema claro próprio para impressão (os botões e os formulários ficam ocultos).
+- **BDFix e Bugs como imagem**: as seções 11 e 12 têm os botões **🖼 Salvar imagem** (baixa um PNG) e **📋 Copiar imagem** (copia para colar com Ctrl+V no corpo do e-mail). A imagem sai com fundo claro, título, data e sem a coluna Ações.
+- **Avisos por data**: cada aviso tem um campo de data e um de descrição, e a lista fica sempre em ordem cronológica. O aviso de hoje aparece destacado e os que já passaram ficam esmaecidos.
 - **Responsivo**: funciona em desktop e em celular.
 
 ## Seções da ata
@@ -43,7 +45,7 @@ O site é **um único arquivo `index.html`**, sem backend, sem build e sem depen
 | 06 | Acompanhamento | Tickets que estão sendo acompanhados, com comentário | `acompanhamento.txt` |
 | 07 | Sugestões | Sugestões de melhoria de processo ou de sistema | `sugestoes.txt` |
 | 08 | Tickets — Análise Conjunta N3 | Tickets antigos analisados em conjunto pela equipe | `tickets_analise_conjunta_n3.txt` |
-| 09 | Avisos | Férias, folgas, feriados e compromissos da equipe | `avisos.txt` |
+| 09 | Avisos | Data e descrição de férias, folgas, feriados e compromissos, em ordem cronológica | `avisos.txt` |
 | 10 | Impactos / Acontecimentos da Semana | O que afetou a produtividade em cada semana | `impactos_acontecimentos_semana.txt` |
 | 11 | BDFix — Recentes | Scripts de correção de base aplicados (NUVEM/LOCAL) | `bdfix_recentes.txt` |
 | 12 | Bugs Recentes | Bugs identificados, com a descrição e a solução | `bugs_recentes.txt` |
@@ -98,6 +100,10 @@ O botão **↺ Alterar participantes** volta para essa tela a qualquer momento.
 
 Clique em **⬇ Gerar em PDF** e escolha *Salvar como PDF* no diálogo de impressão.
 
+### 5. Enviar BDFix e Bugs por e-mail
+
+Nas seções 11 e 12, use **📋 Copiar imagem** e cole a tabela no corpo do e-mail, ou **🖼 Salvar imagem** para anexar o arquivo `bdfix_recentes_aaaa-mm-dd.png` / `bugs_recentes_aaaa-mm-dd.png`. O gerador de imagem (html2canvas) é baixado da internet no primeiro clique, e a opção de copiar só funciona em HTTPS ou `localhost`.
+
 > **Importante:** tudo o que é editado na página fica só na memória do navegador. Se você recarregar a página sem salvar os TXT, as alterações se perdem.
 
 ## Arquivos de dados (.txt)
@@ -115,13 +121,14 @@ Clique em **⬇ Gerar em PDF** e escolha *Salvar como PDF* no diálogo de impres
 | `acompanhamento.txt` | `responsável\|ticket\|comentário` | `Wesley Phillipe\|461463\|Aguardando retorno do cliente` |
 | `sugestoes.txt` | `responsável\|ticket\|sugestão` | `Flaubert\|\|Que aconteça esse tipo de reunião também no N2.` |
 | `tickets_analise_conjunta_n3.txt` | `responsável\|tickets` | `Wesley Phillipe\|461463 / 419774` |
-| `avisos.txt` | texto livre (sugestão: `dd/mm/aaaa - aviso`) | `07/09/2026 - Feriado nacional - Independência do Brasil.` |
+| `avisos.txt` | `data (dd/mm/aaaa)\|aviso` | `07/09/2026\|Feriado nacional - Independência do Brasil.` |
 | `impactos_acontecimentos_semana.txt` | `semana\|impacto` | `14/09/2026 - 18/09/2026\|Rafael teve troca de máquina…` |
 | `bdfix_recentes.txt` | `ticket\|título\|local` | `539704\|Criação de BDFIX para excluir fatura unificada…\|NUVEM` |
 | `bugs_recentes.txt` | `ticket\|título\|descrição\|solução` | `537282\|List index out of bounds…\|…\|Realizada a correção…` |
 
 Valores aceitos:
 
+- **Data** (avisos): `dd/mm/aaaa`. Linhas no formato antigo `dd/mm/aaaa - aviso` ainda são lidas; ao salvar, elas são gravadas no formato novo.
 - **Tipo** (análise): `Comentário`, `Análise`, `Feedback`.
 - **Local** (BDFix): `NUVEM`, `LOCAL`.
 - **Responsável**: um dos membros cadastrados ou `Sem Responsável`.

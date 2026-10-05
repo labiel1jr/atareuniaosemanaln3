@@ -1,11 +1,11 @@
-11/08/2026 — Flaubert resolvendo questões pessoais.
-31/08/2026 — retorno das férias do Wesley.
-04/09/2026 - Felipe ficará de folga - Aniversário.
-07/09/2026 - Feriado nacional - Independência do Brasil.
-08/09/2026 - Flaubert resolvendo questão elétrica com a CEMIG.
-10/09/2026 - Flaubert resolvendo questões pessoais
-14/09/2026 - Rafael trocou de maquina.
-14/09/2026 - Flaubert de férias
-24/09/2026 - Rafael reunião da escola dos filhos as 16:00
-25/09/2026 - Wesley Medico retorno cardiologista - 15:30
-05/10/2026 - Provavelmente implementação de IA para o resto da equipe
+11/08/2026|Flaubert resolvendo questões pessoais.
+31/08/2026|retorno das férias do Wesley.
+04/09/2026|Felipe ficará de folga - Aniversário.
+07/09/2026|Feriado nacional - Independência do Brasil.
+08/09/2026|Flaubert resolvendo questão elétrica com a CEMIG.
+10/09/2026|Flaubert resolvendo questões pessoais
+14/09/2026|Rafael trocou de maquina.
+14/09/2026|Flaubert de férias
+24/09/2026|Rafael reunião da escola dos filhos as 16:00
+25/09/2026|Wesley Medico retorno cardiologista - 15:30
+05/10/2026|Provavelmente implementação de IA para o resto da equipe
