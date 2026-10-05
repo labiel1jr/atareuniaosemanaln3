@@ -15,3 +15,4 @@ Wesley Phillipe||Incluir na ata de reunião os bugs recentes da semana e corrup�
 Flaubert||Que aconteça esse tipo de reunião também no N2.
 Sem Responsável||Será implementado a partir de 01/10/2026 o atendimento rotativo N3, onde um dos desenvolvedores ficará disponível para analisar tickets rápidos.
 Wesley Phillipe||Envio de um documento, toda sexta-feira, ao e-mail da área N2, contendo os tickets solucionados classificados como "Orientação", para que sejam inseridos na base de conhecimento.
+Fernando||Criação de um repositório para os projetos de IA, basicamente uma biblioteca de contexto do que é realizado pela equipe, e criação de uma padronização.

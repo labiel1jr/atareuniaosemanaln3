@@ -2,3 +2,5 @@ Danilson Bezerra|Comentário|Se atentar ao SLA dos tickets que será cobrado pel
 Sem Responsável|Análise|Necessidade de identificar previamente demandas que terão prazo para entrega por mudança de norma, lei ou padrão externo.
 Sem Responsável|Análise|Atenção aos tickets de postos estratégicos, visando antecipar possíveis ouvidorias.
 Sem Responsável|Comentário|Quando fizer um BDFix ou ticket, discutir com o setor responsável se existe alguma outra necessidade antes de liberar. Se necessário, chamar o responsável para discutir a viabilidade do BDFix.
+Wesley Phillipe|Comentário|Informamos que a meta semanal foi revisada, passando de 15 para 18 tickets.
+Danilson Bezerra|Feedback|Introdução da Inteligência Artificial nas Rotinas de Análise de Tickets

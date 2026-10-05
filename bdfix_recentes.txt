@@ -22,3 +22,6 @@
 541326|Solicitação de BDFIX – Exclusão de Faturamento Unificado NODE 18|NUVEM
 541524|BDFIX para alterar a quantidade dos itens para emissão de NF-e para prefeitura - NODE21|NUVEM
 540064|Adiantamento de cliente/fornecedor está constando número desconhecido na frente do titular e perdeu vinculo do cadastro de cliente - Node 20|NUVEM
+534997|Divergencia no estoque de produto IPI F1 MAS SINT 5W30 SN/RC, código 07896587320838 devido o inventario 154 - NODE13|NUVEM
+518717|Perda de vínculo do histórico de recebimento de cheques do cliente Romeu Corrêa Borba ME – Rede Netinho – Node19.- Rede Netinho Node19|NUVEM
+534997|Divergencia no estoque de produto IPI F1 MAS SINT 5W30 SN/RC, código 07896587320838 devido o inventario 154 - NODE13|NUVEM

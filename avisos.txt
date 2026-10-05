@@ -8,3 +8,4 @@
 14/09/2026 - Flaubert de férias
 24/09/2026 - Rafael reunião da escola dos filhos as 16:00
 25/09/2026 - Wesley Medico retorno cardiologista - 15:30
+05/10/2026 - Provavelmente implementação de IA para o resto da equipe
