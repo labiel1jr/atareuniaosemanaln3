@@ -65,7 +65,7 @@ Na seção 03, o percentual de cada semana aparece em verde (≥ 100%), amarelo 
 
 ### 1. Abrir a página
 
-A página precisa ser servida por **HTTP** para que a carga automática dos `.txt` funcione. Aberto direto do disco (`file://`), o navegador bloqueia o `fetch` e as seções ficam vazias ou com os dados de exemplo. Nesse caso ainda dá para usar **📂 Carregar TXT** seção por seção.
+A página precisa ser servida por **HTTP** para carregar os `.txt` e as listas `responsavel.md` e `rede.md`. Aberto direto do disco (`file://`), o navegador bloqueia o `fetch` e as seções ficam vazias ou com os dados de exemplo. Nesse caso ainda dá para usar **📂 Carregar TXT** seção por seção.
 
 Opções:
 
@@ -131,7 +131,7 @@ Valores aceitos:
 - **Data** (avisos): `dd/mm/aaaa`. Linhas no formato antigo `dd/mm/aaaa - aviso` ainda são lidas; ao salvar, elas são gravadas no formato novo.
 - **Tipo** (análise): `Comentário`, `Análise`, `Feedback`.
 - **Local** (BDFix): `NUVEM`, `LOCAL`.
-- **Responsável**: um dos membros cadastrados ou `Sem Responsável`.
+- **Responsável**: um dos nomes do `responsavel.md` ou `Sem Responsável`.
 - **Ticket** em sugestões: opcional (deixe o campo vazio, como em `Nome||texto`).
 
 ## Rotina semanal de atualização
@@ -158,13 +158,31 @@ O histórico do Git passa a funcionar como o arquivo das atas anteriores.
 
 ## Personalização
 
-As listas ficam no `<script>` do `index.html`:
+### Responsáveis e redes (arquivos `.md`)
+
+As listas que mais mudam ficam fora do HTML, em dois arquivos Markdown. Basta editar o arquivo e fazer o commit; o site lê a lista ao abrir.
+
+| Arquivo | Usado em |
+|---------|----------|
+| `responsavel.md` | Tela de abertura (presentes/ausentes, responsável, ata por) e o campo **Responsável** das abas 02, 05, 06, 07 e 08 |
+| `rede.md` | Campo **Rede** (autocompletar) da aba 02 |
+
+Formato: um item por linha, começando com `- `. Títulos (`#`) e textos explicativos são ignorados, assim como nomes repetidos. O site ordena a lista em ordem alfabética, mas mantenha o arquivo ordenado para facilitar a leitura. A opção `Sem Responsável` é colocada automaticamente e não precisa estar no `responsavel.md`.
+
+```markdown
+# Responsáveis
+
+- Artur
+- Danilson Bezerra
+```
+
+> Se o `responsavel.md` não carregar (por exemplo, abrindo por `file://`), a tela de abertura avisa e não deixa gerar a ata.
+
+### Outras configurações (no `<script>` do `index.html`)
 
 | O que mudar | Onde (procure por) |
 |-------------|--------------------|
-| Membros da equipe | `var MEMBERS = [` |
 | Meta semanal (atual 18) | `var ESPERADO = 18;` e o campo desabilitado com `value="18"` na seção 03 |
-| Redes (autocompletar dos tickets) | `var REDES = [` |
 | Motivos de prioridade | `var MOTIVOS = [` |
 | Faixas de cor do percentual | `function pctClass` |
 | Cores e fontes | variáveis CSS em `:root` |
@@ -175,6 +193,8 @@ As listas ficam no `<script>` do `index.html`:
 atareuniaosemanaln3/
 ├── index.html                          # Site completo (HTML + CSS + JS)
 ├── og-image-ata-n3.png                 # Imagem de pré-visualização para links
+├── responsavel.md                      # Lista de responsáveis (todas as abas)
+├── rede.md                             # Lista de redes (aba 02)
 ├── tickets_prioritarios_semana.txt     # Seção 02
 ├── meta_semanal_x_realizado.txt        # Seção 03 (alimenta a 04)
 ├── analise_comentarios_feedbacks.txt   # Seção 05
