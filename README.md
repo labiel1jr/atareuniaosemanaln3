@@ -37,7 +37,7 @@ O site é **um único arquivo `index.html`**, sem backend, sem build e sem depen
 |---|-------|----------------|------------------|
 | 01 | Identificação da Reunião | Data, responsável, autor da ata, participantes e ausentes | — (preenchida na tela de abertura) |
 | 02 | Tickets Prioritários da Semana | Ticket, rede, responsável, motivo da prioridade e checkpoint | `tickets_prioritarios_semana.txt` |
-| 03 | Meta Semanal × Realizado | Tickets entregues por semana comparados com a meta (15) | `meta_semanal_x_realizado.txt` |
+| 03 | Meta Semanal × Realizado | Tickets entregues por semana comparados com a meta (18 desde 28/09/2026; antes, 15) | `meta_semanal_x_realizado.txt` |
 | 04 | Desempenho Acumulado | KPIs e gráfico calculados a partir da seção 03 | — (calculada) |
 | 05 | Análise, Comentários e Feedbacks | Pontos de atenção levantados na reunião | `analise_comentarios_feedbacks.txt` |
 | 06 | Acompanhamento | Tickets que estão sendo acompanhados, com comentário | `acompanhamento.txt` |
@@ -110,7 +110,7 @@ Clique em **⬇ Gerar em PDF** e escolha *Salvar como PDF* no diálogo de impres
 | Arquivo | Formato da linha | Exemplo |
 |---------|------------------|---------|
 | `tickets_prioritarios_semana.txt` | `ticket\|rede\|responsável\|motivo\|checkpoint` | `440918\|REDE TUPY\|Rafael Jr\|Urgência Fernando\|Criar arquivo temporário…` |
-| `meta_semanal_x_realizado.txt` | `período\|esperado\|realizado` | `21/09/2026 – 25/09/2026\|15\|22` |
+| `meta_semanal_x_realizado.txt` | `período\|esperado\|realizado` | `28/09/2026 – 02/10/2026\|18\|30` |
 | `analise_comentarios_feedbacks.txt` | `responsável\|tipo\|comentário` | `Sem Responsável\|Análise\|Atenção aos tickets de postos estratégicos…` |
 | `acompanhamento.txt` | `responsável\|ticket\|comentário` | `Wesley Phillipe\|461463\|Aguardando retorno do cliente` |
 | `sugestoes.txt` | `responsável\|ticket\|sugestão` | `Flaubert\|\|Que aconteça esse tipo de reunião também no N2.` |
@@ -156,7 +156,7 @@ As listas ficam no `<script>` do `index.html`:
 | O que mudar | Onde (procure por) |
 |-------------|--------------------|
 | Membros da equipe | `var MEMBERS = [` |
-| Meta semanal (padrão 15) | `var ESPERADO = 15;` e o campo desabilitado com `value="15"` na seção 03 |
+| Meta semanal (atual 18) | `var ESPERADO = 18;` e o campo desabilitado com `value="18"` na seção 03 |
 | Redes (autocompletar dos tickets) | `var REDES = [` |
 | Motivos de prioridade | `var MOTIVOS = [` |
 | Faixas de cor do percentual | `function pctClass` |
