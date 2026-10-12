@@ -368,6 +368,7 @@ Um item por linha, começando com `- `. Mantenha em ordem alfabética.
 - REDE VILARINHO
 - REDE VILLA LOBOS
 - REDE VISAO
+- REDE VISSOTO
 - REDE VOVO GONZAGA
 - REDE WALBRAX
 - REDE WAP

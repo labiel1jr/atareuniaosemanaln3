@@ -23,3 +23,9 @@
 540064|Adiantamento de cliente/fornecedor está constando número desconhecido na frente do titular e perdeu vinculo do cadastro de cliente - Node 20|NUVEM
 534997|Divergencia no estoque de produto IPI F1 MAS SINT 5W30 SN/RC, código 07896587320838 devido o inventario 154 - NODE13|NUVEM
 518717|Perda de vínculo do histórico de recebimento de cheques do cliente Romeu Corrêa Borba ME – Rede Netinho – Node19.- Rede Netinho Node19|NUVEM
+543638|Tanque 04 excluído incorretamente - Restaurar (NODE17) (EMP019)|NUVEM
+544078|Alterar data de vencimento do vale compra - Node 20|NUVEM
+543730|BDfix de correçao de nota litragem divergente com a NFce node21|NUVEM
+543099|Cadastro duplicado do produto o Palheta New Sport Line 22 com o codigo 7898955022849. - REDE LIDER Node: 19|NUVEM
+541703|Produtos com valores negativos no relatório do DRE, devido ao estoque de implantação estar zerado.|NUVEM
+544404|BDfix de correçao de nota litragem divergente com a NFce node21|NUVEM
