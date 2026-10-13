@@ -645,6 +645,16 @@
     box-shadow: 0 10px 24px rgba(29,51,73,.25);
   }
   #gerar-pdf-btn:hover { background: var(--brand); }
+  #pdf-actions .pdf-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn-secondary:disabled { opacity: .45; cursor: default; }
+  .btn-secondary:disabled:hover { background: var(--surface); }
+  #pdf-actions #unsaved-hint.pending { color: var(--warn); font-weight: 600; }
   #pdf-actions .pdf-hint {
     display: block;
     text-align: center;
@@ -1224,7 +1234,11 @@
 
 <div id="pdf-actions">
   <div>
-    <button id="gerar-pdf-btn" type="button">⬇ Gerar em PDF</button>
+    <div class="pdf-buttons">
+      <button id="gerar-pdf-btn" type="button">⬇ Gerar em PDF</button>
+      <button id="save-all-txt-btn" class="btn-secondary" type="button" disabled>💾 Salvar TXT alterados</button>
+    </div>
+    <span class="pdf-hint" id="unsaved-hint">Nenhuma alteração pendente.</span>
     <span class="pdf-hint">Cada tópico numerado é impresso em página própria.</span>
   </div>
 </div>
@@ -1764,7 +1778,7 @@
   });
 
   /* Auto-load meta_semanal_x_realizado.txt from the same folder, if present */
-  fetch('meta_semanal_x_realizado.txt')
+  fetch('meta_semanal_x_realizado.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseMetaTXT(text);
@@ -1774,7 +1788,8 @@
       metaWarning.textContent = 'Tabela carregada automaticamente de meta_semanal_x_realizado.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — keep default data */ });
+    .catch(function () { /* file not found or not accessible — keep default data */ })
+    .then(function () { markTxtClean('meta_semanal_x_realizado.txt'); });
 
   /* ---- Section 5: Análise, Comentários e Feedbacks ---- */
   var analiseTbody = document.getElementById('analise-tbody');
@@ -1938,7 +1953,7 @@
   });
 
   /* Auto-load analise_comentarios_feedbacks.txt from the same folder, if present */
-  fetch('analise_comentarios_feedbacks.txt')
+  fetch('analise_comentarios_feedbacks.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseAnaliseTXT(text);
@@ -1947,7 +1962,8 @@
       analiseWarning.textContent = 'Tabela carregada automaticamente de analise_comentarios_feedbacks.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — table stays empty */ });
+    .catch(function () { /* file not found or not accessible — table stays empty */ })
+    .then(function () { markTxtClean('analise_comentarios_feedbacks.txt'); });
 
   /* ---- Section 6: Acompanhamento ---- */
   var acompTbody = document.getElementById('acompanhamento-tbody');
@@ -2106,7 +2122,7 @@
   });
 
   /* Auto-load acompanhamento.txt from the same folder, if present */
-  fetch('acompanhamento.txt')
+  fetch('acompanhamento.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseAcompTXT(text);
@@ -2115,7 +2131,8 @@
       acompWarning.textContent = 'Tabela carregada automaticamente de acompanhamento.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — table stays empty */ });
+    .catch(function () { /* file not found or not accessible — table stays empty */ })
+    .then(function () { markTxtClean('acompanhamento.txt'); });
 
   /* ---- Section 7: Sugestões ---- */
   var sugTbody = document.getElementById('sugestoes-tbody');
@@ -2282,7 +2299,7 @@
   });
 
   /* Auto-load sugestoes.txt from the same folder, if present */
-  fetch('sugestoes.txt')
+  fetch('sugestoes.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseSugTXT(text);
@@ -2291,7 +2308,8 @@
       sugWarning.textContent = 'Tabela carregada automaticamente de sugestoes.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — table stays empty */ });
+    .catch(function () { /* file not found or not accessible — table stays empty */ })
+    .then(function () { markTxtClean('sugestoes.txt'); });
 
   /* ---- Section 8: Tickets — Análise Conjunta N3 ---- */
   var conjuntaTbody = document.getElementById('conjunta-tbody');
@@ -2455,7 +2473,7 @@
   });
 
   /* Auto-load tickets_analise_conjunta_n3.txt from the same folder, if present */
-  fetch('tickets_analise_conjunta_n3.txt')
+  fetch('tickets_analise_conjunta_n3.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseConjuntaTXT(text);
@@ -2464,7 +2482,8 @@
       conjuntaWarning.textContent = 'Tabela carregada automaticamente de tickets_analise_conjunta_n3.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — table stays empty */ });
+    .catch(function () { /* file not found or not accessible — table stays empty */ })
+    .then(function () { markTxtClean('tickets_analise_conjunta_n3.txt'); });
 
   /* ---- Section 9: Avisos (Data | Aviso, ordenados pela data) ---- */
   var avisosTbody = document.getElementById('avisos-tbody');
@@ -2629,7 +2648,7 @@
   });
 
   /* Auto-load avisos.txt from the same folder, if present */
-  fetch('avisos.txt')
+  fetch('avisos.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseAvisosTXT(text);
@@ -2638,7 +2657,8 @@
       avisoWarning.textContent = 'Avisos carregados automaticamente de avisos.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — table stays empty */ });
+    .catch(function () { /* file not found or not accessible — table stays empty */ })
+    .then(function () { markTxtClean('avisos.txt'); });
 
   /* ---- Section 10: Impactos / Acontecimentos da Semana ---- */
   var impactosTbody = document.getElementById('impactos-tbody');
@@ -2767,7 +2787,7 @@
   });
 
   /* Auto-load impactos_acontecimentos_semana.txt from the same folder, if present */
-  fetch('impactos_acontecimentos_semana.txt')
+  fetch('impactos_acontecimentos_semana.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseImpactosTXT(text);
@@ -2776,7 +2796,8 @@
       impactoWarning.textContent = 'Tabela carregada automaticamente de impactos_acontecimentos_semana.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — table stays empty */ });
+    .catch(function () { /* file not found or not accessible — table stays empty */ })
+    .then(function () { markTxtClean('impactos_acontecimentos_semana.txt'); });
 
   /* ---- Section 11: BDFix — Recentes ---- */
   var bdfixTbody = document.getElementById('bdfix-tbody');
@@ -2916,7 +2937,7 @@
   });
 
   /* Auto-load bdfix_recentes.txt from the same folder, if present */
-  fetch('bdfix_recentes.txt')
+  fetch('bdfix_recentes.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseBdfixTXT(text);
@@ -2925,7 +2946,8 @@
       bdfixWarning.textContent = 'Tabela carregada automaticamente de bdfix_recentes.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — table stays empty */ });
+    .catch(function () { /* file not found or not accessible — table stays empty */ })
+    .then(function () { markTxtClean('bdfix_recentes.txt'); });
 
   /* ---- Section 12: Bugs Recentes ---- */
   var bugsTbody = document.getElementById('bugs-tbody');
@@ -3073,7 +3095,7 @@
   });
 
   /* Auto-load bugs_recentes.txt from the same folder, if present */
-  fetch('bugs_recentes.txt')
+  fetch('bugs_recentes.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseBugsTXT(text);
@@ -3082,7 +3104,8 @@
       bugWarning.textContent = 'Tabela carregada automaticamente de bugs_recentes.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — table stays empty */ });
+    .catch(function () { /* file not found or not accessible — table stays empty */ })
+    .then(function () { markTxtClean('bugs_recentes.txt'); });
 
   /* ---- Section 2: Tickets Prioritários — TXT export/import ---- */
   var ticketsTbody = document.getElementById('tickets-tbody');
@@ -3342,7 +3365,7 @@
   });
 
   /* Auto-load tickets_prioritarios_semana.txt from the same folder, if present */
-  fetch('tickets_prioritarios_semana.txt')
+  fetch('tickets_prioritarios_semana.txt', { cache: 'no-cache' })
     .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
     .then(function (text) {
       var parsed = parseTicketsTXT(text);
@@ -3352,7 +3375,8 @@
       ticketsWarning.textContent = 'Tabela carregada automaticamente de tickets_prioritarios_semana.txt.' +
         (parsed.invalid > 0 ? (' ' + parsed.invalid + ' linha(s) ignorada(s) por formato inválido.') : '');
     })
-    .catch(function () { /* file not found or not accessible — keep default data */ });
+    .catch(function () { /* file not found or not accessible — keep default data */ })
+    .then(function () { markTxtClean('tickets_prioritarios_semana.txt'); });
 
 
   /* ---- Section 2: Add new ticket form ---- */
@@ -3602,6 +3626,88 @@
     width: 1200,
     fileName: 'bugs_recentes_' + imageFileDate() + '.png',
     rowToCells: function (row) { var d = bugRowFromCells(row); return [d.ticket, d.titulo, d.descricao, d.solucao]; }
+  });
+
+  /* ---- Alterações não salvas: comparação com o TXT carregado e "Salvar TXT alterados" ---- */
+  var TXT_SECTIONS = [
+    { file: 'tickets_prioritarios_semana.txt', saveBtnId: 'save-tickets-txt-btn', build: buildTicketsTXT },
+    { file: 'meta_semanal_x_realizado.txt', saveBtnId: 'save-meta-txt-btn', build: buildMetaTXT },
+    { file: 'analise_comentarios_feedbacks.txt', saveBtnId: 'save-analise-txt-btn', build: buildAnaliseTXT },
+    { file: 'acompanhamento.txt', saveBtnId: 'save-acomp-txt-btn', build: buildAcompTXT },
+    { file: 'sugestoes.txt', saveBtnId: 'save-sug-txt-btn', build: buildSugTXT },
+    { file: 'tickets_analise_conjunta_n3.txt', saveBtnId: 'save-conjunta-txt-btn', build: buildConjuntaTXT },
+    { file: 'avisos.txt', saveBtnId: 'save-aviso-txt-btn', build: buildAvisosTXT },
+    { file: 'impactos_acontecimentos_semana.txt', saveBtnId: 'save-impacto-txt-btn', build: buildImpactosTXT },
+    { file: 'bdfix_recentes.txt', saveBtnId: 'save-bdfix-txt-btn', build: buildBdfixTXT },
+    { file: 'bugs_recentes.txt', saveBtnId: 'save-bug-txt-btn', build: buildBugsTXT }
+  ];
+  /* Conteúdo de cada TXT no momento da carga ou do último salvamento; seção sem linha de base ainda não terminou de carregar */
+  var txtBaseline = {};
+  var saveAllBtn = document.getElementById('save-all-txt-btn');
+  var unsavedHint = document.getElementById('unsaved-hint');
+
+  function markTxtClean(file) {
+    TXT_SECTIONS.forEach(function (s) { if (s.file === file) txtBaseline[file] = s.build(); });
+    refreshUnsavedState();
+  }
+
+  function dirtyTxtSections() {
+    return TXT_SECTIONS.filter(function (s) {
+      return Object.prototype.hasOwnProperty.call(txtBaseline, s.file) && s.build() !== txtBaseline[s.file];
+    });
+  }
+
+  /* Só escreve no DOM quando o texto muda, para não realimentar o MutationObserver abaixo */
+  function setTextIfChanged(el, text) { if (el.textContent !== text) el.textContent = text; }
+
+  function refreshUnsavedState() {
+    var dirty = dirtyTxtSections();
+    saveAllBtn.disabled = dirty.length === 0;
+    setTextIfChanged(saveAllBtn, '💾 Salvar TXT alterados' + (dirty.length ? ' (' + dirty.length + ')' : ''));
+    unsavedHint.className = 'pdf-hint' + (dirty.length ? ' pending' : '');
+    setTextIfChanged(unsavedHint, dirty.length
+      ? 'Alterações não salvas: ' + dirty.map(function (s) { return s.file; }).join(', ') + '.'
+      : 'Nenhuma alteração pendente.');
+  }
+
+  function downloadTxt(fileName, txt) {
+    var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  TXT_SECTIONS.forEach(function (s) {
+    document.getElementById(s.saveBtnId).addEventListener('click', function () { markTxtClean(s.file); });
+  });
+
+  saveAllBtn.addEventListener('click', function () {
+    var dirty = dirtyTxtSections();
+    /* Intervalo entre os downloads: o navegador bloqueia vários downloads disparados no mesmo instante */
+    dirty.forEach(function (s, i) {
+      setTimeout(function () {
+        downloadTxt(s.file, s.build());
+        markTxtClean(s.file);
+      }, i * 400);
+    });
+  });
+
+  var unsavedTimer = null;
+  new MutationObserver(function () {
+    clearTimeout(unsavedTimer);
+    unsavedTimer = setTimeout(refreshUnsavedState, 300);
+  }).observe(document.getElementById('report-root'), { childList: true, subtree: true, characterData: true });
+
+  window.addEventListener('beforeunload', function (e) {
+    if (dirtyTxtSections().length === 0) return;
+    e.preventDefault();
+    e.returnValue = '';
+    return '';
   });
 
   /* ---- PDF export ---- */

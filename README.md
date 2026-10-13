@@ -24,7 +24,8 @@ O site é **um único arquivo `index.html`**, sem backend, sem build e sem depen
 - **Tela de abertura**: você marca quem está presente ou ausente e escolhe o responsável pela reunião e quem escreve a ata.
 - **Data automática**: a data da reunião é a do dia em que a ata é gerada, e o campo "Novo período" já vem com a semana atual (segunda a sexta).
 - **12 seções** editáveis direto na página: é possível adicionar e remover linhas em cada uma.
-- **Carga automática dos dados**: ao abrir a página, cada seção lê o `.txt` correspondente que está na mesma pasta.
+- **Carga automática dos dados**: ao abrir a página, cada seção lê o `.txt` correspondente que está na mesma pasta, sempre conferindo com o servidor (sem usar cópia em cache), para não abrir a reunião com os dados da semana anterior logo após um push.
+- **Alterações não salvas**: a página compara cada seção com o `.txt` carregado. No rodapé, o botão **💾 Salvar TXT alterados (n)** baixa de uma vez só os arquivos que mudaram, e a lista dos arquivos pendentes aparece logo abaixo. Ao fechar ou recarregar a aba com alterações pendentes, o navegador pede confirmação.
 - **Salvar / Carregar TXT por seção**: exporta a tabela para `.txt` ou importa um `.txt` escolhido na máquina.
 - **Indicadores e gráfico**: KPIs e um gráfico de barras em SVG (Meta x Realizado), com zoom pela roda do mouse e reset com duplo clique.
 - **Tickets prioritários**: tabela ordenável por coluna, busca de rede com autocompletar e troca do responsável direto na célula.
@@ -94,7 +95,7 @@ O botão **↺ Alterar participantes** volta para essa tela a qualquer momento.
 
 - Use o formulário no fim de cada seção para **adicionar** linhas e o botão **Remover** para excluir.
 - Nos tickets prioritários, clique no cabeçalho para ordenar e na célula do responsável para trocá-lo.
-- Ao terminar, clique em **💾 Salvar TXT** nas seções alteradas para baixar os arquivos atualizados.
+- Ao terminar, clique em **💾 Salvar TXT alterados** no rodapé para baixar todos os arquivos que mudaram (ou em **💾 Salvar TXT** de cada seção). Se o navegador perguntar se pode baixar vários arquivos, permita.
 
 ### 4. Gerar o PDF
 
@@ -104,7 +105,7 @@ Clique em **⬇ Gerar em PDF** e escolha *Salvar como PDF* no diálogo de impres
 
 Nas seções 11 e 12, use **📋 Copiar imagem** e cole a tabela no corpo do e-mail, ou **🖼 Salvar imagem** para anexar o arquivo `bdfix_recentes_aaaa-mm-dd.png` / `bugs_recentes_aaaa-mm-dd.png`. O gerador de imagem (html2canvas) é baixado da internet no primeiro clique, e a opção de copiar só funciona em HTTPS ou `localhost`.
 
-> **Importante:** tudo o que é editado na página fica só na memória do navegador. Se você recarregar a página sem salvar os TXT, as alterações se perdem.
+> **Importante:** tudo o que é editado na página fica só na memória do navegador. Se você recarregar a página sem salvar os TXT, as alterações se perdem; por isso o navegador pede confirmação ao sair com alterações pendentes.
 
 ## Arquivos de dados (.txt)
 
@@ -137,7 +138,7 @@ Valores aceitos:
 ## Rotina semanal de atualização
 
 1. Abra a página e faça a reunião, editando as seções.
-2. Clique em **💾 Salvar TXT** nas seções que mudaram.
+2. Clique em **💾 Salvar TXT alterados** no rodapé (baixa só as seções que mudaram).
 3. Substitua os arquivos na pasta do repositório pelos que foram baixados (o navegador pode renomeá-los como `arquivo (1).txt`; corrija o nome).
 4. Gere o PDF da ata.
 5. Faça o commit e o push:
@@ -210,7 +211,7 @@ O `acompanhamento.txt` (seção 06) ainda não está no repositório. Enquanto e
 
 ## Limitações conhecidas
 
-- **Sem persistência automática**: as edições ficam só na memória até você salvar os TXT e fazer o commit.
+- **Sem persistência automática**: as edições ficam só na memória até você salvar os TXT e fazer o commit. A página avisa ao sair com alterações pendentes, mas não as guarda.
 - **Sem controle de acesso**: publicado no GitHub Pages, o site e os `.txt` (nomes de clientes, tickets e avisos da equipe) ficam visíveis para quem tiver o link. Se o repositório for público, avalie torná-lo privado.
 - **`file://` não carrega os TXT automaticamente**: é preciso usar um servidor HTTP.
 - **Separador `|`**: um pipe dentro de um texto quebra a linha em campos a mais.
