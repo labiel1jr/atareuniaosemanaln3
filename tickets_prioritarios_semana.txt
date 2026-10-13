@@ -2,7 +2,6 @@
 520252|REDE ATM|Felipe Vieira|Tipo da demanda/Impacto|
 536882|LBC|Felipe Vieira|Tipo da demanda/Impacto|Ajuste solicitado pelo Crystian da Implantação
 502328|REDE PRAIA|Flaubert|Urgência comercial|
-397328|DLBC|Rafael Jr|Urgência por tempo de Abertura|
 440918|REDE TUPY|Rafael Jr|Urgência Fernando|Criar arquivo temporário de pgto/lançamento/vencimento em memória com novos valores.
 518675|REVENDA JF|Rafael Jr|Cliente estratégico|
 542736|REDE MENDONÇA|Rafael Jr|Tipo da demanda/Impacto|Solicitação do Fernando, ajuste na DLL
@@ -11,6 +10,5 @@
 485227|REDE PRAIA|Sem Responsável|Urgência Ewerton|
 485352|REDE AUTO POSTO JJL|Sem Responsável|Tipo da demanda/Impacto|Verificar a tarefa aberta pelo Yam
 519354|ARAUJO E LAMBOGLIA|Sem Responsável|Cliente estratégico|
-534629|REDE OSORIOS|Sem Responsável|Tipo da demanda/Impacto|
 540291|REDE FLEX|Sem Responsável|Urgência Ewerton|Solicitação do Ewerton, análise do ticket em prioridade
 523819|REDE PIONEIRO|Sem Responsável|Urgência por tempo de Abertura|
